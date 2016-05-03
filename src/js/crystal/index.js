@@ -47,31 +47,31 @@ ReactDOM.render(
     <Router history={history}>
       <Route path="/" component={App}>
         <IndexRoute component={Home} />
-        <Route name={__('Authorisation')} path="login" component={Login} />
-        <Route name={__('Registration')} path="registration" component={Registration} />
-        <Route name={__('Profile')} path="profile" component={ProfileMain} />
-        <Route name={__('Forgot your password?')} path="forgot_pass" component={passFirst} />
-        <Route name={__('New password')} path="change_forgotten_pass/:id" component={passSecond} />
-        <Route name={__('New password')} path="is_chagne_pass" component={SuccessPass} />
-        <Route name={__('New password')} path="send_email" component={SubscriptionRememberPass} />
-        <Route name={__('Refill amount')} path="cash" component={CashierStepFirst} />
-        <Route name={__('Payment method')} path="cash_choose" component={CashierStepSecond} />
-        <Route name={__('Confirmation')} path="cash_pay" component={CashierStepThird} />
-        <Route name={__('Games')} path="games/:id" component={PopularGames} />
+        <Route name="Authorisation" path="login" component={Login} />
+        <Route name="Registration" path="registration" component={Registration} />
+        <Route name="Profile" path="profile" component={ProfileMain} />
+        <Route name="Forgot your password?" path="forgot_pass" component={passFirst} />
+        <Route name="New password" path="change_forgotten_pass/:id" component={passSecond} />
+        <Route name="New password" path="is_chagne_pass" component={SuccessPass} />
+        <Route name="New password" path="send_email" component={SubscriptionRememberPass} />
+        <Route name="Refill amount" path="cash" component={CashierStepFirst} />
+        <Route name="Payment method" path="cash_choose" component={CashierStepSecond} />
+        <Route name="Confirmation" path="cash_pay" component={CashierStepThird} />
+        <Route name="Games" path="games/:id" component={PopularGames} />
 
         <Redirect from="games" to="/" /> {/* Hardcode: otherwise we have 404 */}
 
-        <Route name={__('Successfully')} path="success" component={Success} />
-        <Route name={__('Successfully')} path="success_coupon" component={SubscriptionCoupon} />
-        <Route name={__('Terms and Conditions')} path="termsandconditions" component={Rules} />
-        <Route name={__('Responsible gaming')} path="responsiblegaming" component={Rules} />
-        <Route name={__('Privacy policy')} path="privacypolicy" component={Rules} />
-        <Route name={__('Antifraud tools')} path="antifraud" component={Rules} />
-        <Route name={__('Fair Gaming')} path="fairgaming" component={Rules} />
-        <Route name={__('Error')} path="error_change_pass" component={ErrorChangePass} />
-        <Route path={__('offline')} component={Offline} />
+        <Route name="Successfully" path="success" component={Success} />
+        <Route name="Successfully" path="success_coupon" component={SubscriptionCoupon} />
+        <Route name="Terms and Conditions" path="termsandconditions" component={Rules} />
+        <Route name="Responsible gaming" path="responsiblegaming" component={Rules} />
+        <Route name="Privacy policy" path="privacypolicy" component={Rules} />
+        <Route name="Antifraud tools" path="antifraud" component={Rules} />
+        <Route name="Fair Gaming" path="fairgaming" component={Rules} />
+        <Route name="Error" path="error_change_pass" component={ErrorChangePass} />
+        <Route path="offline" component={Offline} />
         {/* br */}
-        <Route name={__('Error')} path="*" component={Error404} />
+        <Route name="Error" path="*" component={Error404} />
       </Route>
     </Router>
   </Provider>,

@@ -4,8 +4,9 @@ import { connect } from 'react-redux';
 import MainCarousel from './carousels/mainCarousel';
 import { TabsContainer } from './carousels/tabs';
 import GamesSection from './games/gamesSection';
+import { translate } from '../components/translation/transform';
 
-const project = data.project.slice(0, -6);
+const project = window.data.project.slice(0, -6);
 const Footer = require(`../../${project}/components/base/footer`).default;
 
 let PromotionSection = null;
@@ -14,13 +15,13 @@ if (project === 'vulkan') {
 }
 
 const Home = (props) => {
-  const { user } = props;
-  const promotion = (!user && PromotionSection) ? <PromotionSection /> : null;
+  const { user, __ } = props;
+  const promotion = (!user && PromotionSection) ? <PromotionSection __={__} /> : null;
   return (
     <div>
       <MainCarousel />
-      <TabsContainer />
-      <GamesSection />
+      <TabsContainer __={__} />
+      <GamesSection __={__} />
       {promotion}
       <Footer />
     </div>
@@ -29,10 +30,13 @@ const Home = (props) => {
 
 Home.propTypes = {
   user: PropTypes.object,
+  locale: PropTypes.string,
+  __: PropTypes.func,
 };
 
 const select = (state) => ({
   user: state.authorization.user,
+  locale: state.locale,
 });
 
-export default connect(select)(Home);
+export default connect(select)(translate(Home));

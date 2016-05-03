@@ -1,11 +1,11 @@
 import React from 'react';
-import { Subscription } from './subscription';
+import Subscription from './subscription';
 
 const SubscriptionCoupon = () => {
   const propsSubscription = {
     name: 'success',
     url: '#',
-    msg: __('Your request was successfully sent!'),
+    msg: 'Your request was successfully sent!',
     msgColor: 'green',
     btn: 'primary',
     urltext: 'ok',

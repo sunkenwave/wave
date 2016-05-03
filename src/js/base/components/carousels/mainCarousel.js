@@ -33,7 +33,7 @@ const settingsMainCarousel = {
   speed: 500,
 };
 
-const project = data.project.slice(0, -6);
+const project = window.data.project.slice(0, -6);
 const MainCarousel = ({ user, locale }) => {
   let slidesData;
   const slides = [];

@@ -39,6 +39,7 @@ class ChooseLangBox extends Component {
   }
 
   render() {
+    const { __ } = this.props;
     return (
       <div className={`language__box ${this.state.active}`}>
         <p className="language__box-title">{__('Choose language')}</p>
@@ -69,6 +70,7 @@ ChooseLangBox.propTypes = {
   locale: PropTypes.string,
   dispatch: PropTypes.func,
   xsrf: PropTypes.string,
+  __: PropTypes.func,
 };
 
 const select = (state) => ({

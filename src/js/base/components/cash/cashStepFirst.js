@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { routeActions } from 'redux-simple-router';
+import { translate } from './../translation/transform';
 
 import BalanceContainer from '../templates/balanceContainer';
 import CashTD from './cashTD';
@@ -113,7 +114,7 @@ class CashStepFirst extends Component {
   }
 
   render() {
-    const { deposit, currency } = this.props;
+    const { deposit, currency, __ } = this.props;
     let cashTDs;
     let errMsg;
     const errMsgStart = __('Not less than');
@@ -222,6 +223,7 @@ CashStepFirst.propTypes = {
   dispatch: PropTypes.func,
   deposit: PropTypes.array,
   currency: PropTypes.string,
+  __: PropTypes.func,
 };
 
 const select = (state) => ({
@@ -229,4 +231,4 @@ const select = (state) => ({
   currency: state.authorization.user.currency,
 });
 
-export default connect(select)(CashStepFirst);
+export default connect(select)(translate(CashStepFirst));

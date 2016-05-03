@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-
+import { translate } from './../translation/transform';
 import { fetchCoupon, checkCouponResetError } from '../../actions/coupon';
 
 import StatusContainer from '../templates/statusContainer';
@@ -48,7 +48,7 @@ class ProfileMain extends Component {
   }
 
   render() {
-    const { user, errorServer } = this.props;
+    const { user, errorServer, __ } = this.props;
     const { error } = this.state;
 
     const margin = { marginTop: '-5px' };
@@ -116,6 +116,7 @@ ProfileMain.propTypes = {
   user: PropTypes.object,
   errorServer: PropTypes.string,
   xsrf: PropTypes.string,
+  __: PropTypes.func,
 };
 
 const select = (state) => ({
@@ -124,4 +125,4 @@ const select = (state) => ({
   xsrf: state.xsrf,
 });
 
-export default connect(select)(ProfileMain);
+export default connect(select)(translate(ProfileMain));

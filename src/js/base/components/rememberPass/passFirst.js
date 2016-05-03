@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-
+import { translate } from './../translation/transform';
 import { fetchRecoverPass, recoverPassReset } from '../../actions/password';
 
 class PassFirst extends Component {
@@ -61,7 +61,7 @@ class PassFirst extends Component {
   }
 
   render() {
-    const { error } = this.props;
+    const { error, __ } = this.props;
 
     const errMsg = error || __('Incorrect e-mail');
     const label = <label htmlFor="login-input" className="error-msg">{errMsg}</label>;
@@ -96,6 +96,7 @@ PassFirst.propTypes = {
   dispatch: PropTypes.func,
   error: PropTypes.string,
   xsrf: PropTypes.string,
+  __: PropTypes.func,
 };
 
 const select = (state) => ({
@@ -103,4 +104,4 @@ const select = (state) => ({
   xsrf: state.xsrf,
 });
 
-export default connect(select)(PassFirst);
+export default connect(select)(translate(PassFirst));

@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import { translate } from './../translation/transform';
 
 class RecoverPass extends Component {
   constructor(props) {
@@ -54,6 +55,7 @@ class RecoverPass extends Component {
   }
 
   render() {
+    const { __ } = this.props;
     const labelOldPass = (
       <label htmlFor="login--form-input--pass1" className="error-msg">
         {__('Incorrectly filled password')}
@@ -105,6 +107,7 @@ class RecoverPass extends Component {
 
 RecoverPass.propTypes = {
   onSend: PropTypes.func,
+  __: PropTypes.func,
 };
 
-export default RecoverPass;
+export default translate(RecoverPass);

@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import { SocialLogin } from './socialLogin';
+import { translate } from './../translation/transform';
 
 import { fetchRegistration, registrationResetError } from '../../actions/registration';
 
@@ -75,7 +76,7 @@ class Registration extends Component {
   }
 
   render() {
-    const { error } = this.props;
+    const { error, __ } = this.props;
 
     const errMsg = error || __('Incorrect e-mail');
 
@@ -118,7 +119,7 @@ class Registration extends Component {
 
     return (
       <div className="blue-section registration">
-        <SocialLogin />
+        <SocialLogin __={__} />
         <form className="registration--form">
           <div className="registration--form-box">
             <input {...propsEmailInput} onFocus={this.removeError} />
@@ -151,6 +152,7 @@ Registration.propTypes = {
   dispatch: PropTypes.func,
   error: PropTypes.object,
   xsrf: PropTypes.string,
+  __: PropTypes.func,
 };
 
 const select = (state) => ({
@@ -158,4 +160,4 @@ const select = (state) => ({
   xsrf: state.xsrf,
 });
 
-export default connect(select)(Registration);
+export default connect(select)(translate(Registration));

@@ -4,8 +4,9 @@ import { connect } from 'react-redux';
 import { setVisibilityNavigation } from '../../actions/navigation';
 import { List } from './list';
 import { listData } from './listData';
+import { translate } from './../translation/transform';
 
-const project = data.project.slice(0, -6);
+const project = window.data.project.slice(0, -6);
 let LangTab = null;
 if (project !== 'vulkan') {
   LangTab = require(`../../../${project}/components/menu/languageTab.js`).default;
@@ -31,14 +32,14 @@ class MenuNavigation extends Component {
 
   render() {
     const { show } = this.state;
-    const { logout } = this.props;
+    const { logout, __ } = this.props;
     const lastPosition = 0;
     let handlerFuncLast;
 
     const menu = listData.map((item, i) => {
       let t = i;
       const handlerFunc = () => this.trigger(t);
-      return <List {...item} key={++t} visible={show === ++t} handler={handlerFunc} />;
+      return <List {...item} key={++t} visible={show === ++t} __={__} handler={handlerFunc} />;
     });
 
     if (LangTab) {
@@ -48,7 +49,7 @@ class MenuNavigation extends Component {
     return (
       <ul className="menu__navigation">
         {menu}
-        { LangTab && <LangTab visible={show === lastPosition} handler={handlerFuncLast} /> }
+        { LangTab && <LangTab visible={show === lastPosition} handler={handlerFuncLast} __={__} /> }
         <li className="menu__navigation-item" onClick={this.triggerNav}>
           <a className="menu__navigation-item--link" href="#" onClick={logout}>
             <div className="menu__icon__align">
@@ -65,6 +66,12 @@ class MenuNavigation extends Component {
 MenuNavigation.propTypes = {
   dispatch: PropTypes.func,
   logout: PropTypes.func,
+  locale: PropTypes.string,
+  __: PropTypes.func,
 };
 
-export default connect()(MenuNavigation);
+const select = (state) => ({
+  locale: state.locale,
+});
+
+export default connect(select)(translate(MenuNavigation));

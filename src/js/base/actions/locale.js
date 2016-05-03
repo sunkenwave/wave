@@ -1,4 +1,5 @@
 import { wrapFetch } from './helpers';
+import i18next from 'i18next';
 
 export const Language = {
   LANGUAGE_SEND: 'LANGUAGE_SEND',
@@ -19,9 +20,14 @@ export const fetchLanguage = (lang) => (dispatch) => {
   handler.path = 'lang/set';
 
   handler.success = (data) => {
+    i18next.changeLanguage(data.data.attributes.lang);
     dispatch(languageSuccess(data.data.attributes.lang));
-    location.replace(data.data.attributes['redirect-url']);
+    window.data.lang = data.data.attributes.lang;
   };
+
+  handler.failure = () => (
+    false
+  );
 
   wrapFetch(dispatch, handler);
 };

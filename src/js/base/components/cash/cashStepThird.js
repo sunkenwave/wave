@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import { routeActions } from 'redux-simple-router';
+import { translate } from './../translation/transform';
 
 import BalanceContainer from '../templates/balanceContainer';
 
@@ -66,7 +67,7 @@ class CashStepThird extends Component {
   }
 
   render() {
-    const { currency } = this.props;
+    const { currency, __ } = this.props;
     const { deposit, payment } = this.props.creditingOfFunds;
 
     const refillAmount = deposit.refillAmount || deposit.amount;
@@ -138,6 +139,7 @@ CashStepThird.propTypes = {
   dispatch: PropTypes.func,
   creditingOfFunds: PropTypes.object,
   currency: PropTypes.string,
+  __: PropTypes.func,
 };
 
 const select = (state) => ({
@@ -145,4 +147,4 @@ const select = (state) => ({
   creditingOfFunds: state.creditingOfFunds,
 });
 
-export default connect(select)(CashStepThird);
+export default connect(select)(translate(CashStepThird));

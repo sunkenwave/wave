@@ -47,7 +47,7 @@ class GamesSection extends Component {
   }
 
   render() {
-    const { gamesData, user } = this.props;
+    const { gamesData, user, __ } = this.props;
     let countGames;
     let games;
 
@@ -112,6 +112,7 @@ GamesSection.propTypes = {
   dispatch: PropTypes.func,
   user: PropTypes.object,
   gamesData: PropTypes.array,
+  __: PropTypes.func,
 };
 
 const select = (state) => ({

@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { routeActions } from 'redux-simple-router';
+import { translate } from './../../translation/transform';
 
 import { DefaultHeader, HeaderNested, HeaderLogin } from './headers';
 
@@ -19,7 +20,7 @@ class Header extends Component {
   }
 
   render() {
-    const { user, path, title, url } = this.props;
+    const { user, path, title, url, __ } = this.props;
     const handleLogin = (e) => this.handleLogin(e);
     const handleOtherPage = (e) => this.handleOtherPage(e, url);
     let header;
@@ -27,6 +28,7 @@ class Header extends Component {
     const propsHeaderNested = {
       title,
       cb: handleOtherPage,
+      __,
     };
 
     if (user) {
@@ -34,6 +36,7 @@ class Header extends Component {
         balance: user.balance,
         currency: user.currency,
         cb: handleLogin,
+        __,
       };
 
       if (path === '/') {
@@ -43,7 +46,7 @@ class Header extends Component {
       }
     } else {
       if (path === '/') {
-        header = <DefaultHeader />;
+        header = <DefaultHeader __={__} />;
       } else {
         header = <HeaderNested {...propsHeaderNested} />;
       }
@@ -59,11 +62,14 @@ Header.propTypes = {
   path: PropTypes.string,
   title: PropTypes.string,
   url: PropTypes.string,
+  locale: PropTypes.string,
+  __: PropTypes.func,
 };
 
 const select = (state) => ({
   user: state.authorization.user,
   path: state.routing.location.pathname,
+  locale: state.locale,
 });
 
-export default connect(select)(Header);
+export default connect(select)(translate(Header));

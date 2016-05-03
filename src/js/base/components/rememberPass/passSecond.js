@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { fetchForgottenPass } from '../../actions/password';
+import { translate } from './../translation/transform';
 
 class PassSecond extends Component {
   constructor(props) {
@@ -53,6 +54,7 @@ class PassSecond extends Component {
   }
 
   render() {
+    const { __ } = this.props;
     const label = (
       <label htmlFor="login--form-input--pass3" className="error-msg">
         {__('Passwords don`t match')}
@@ -96,10 +98,11 @@ PassSecond.propTypes = {
   dispatch: PropTypes.func,
   params: PropTypes.object,
   xsrf: PropTypes.string,
+  __: PropTypes.func,
 };
 
 const select = (state) => ({
   xsrf: state.xsrf,
 });
 
-export default connect(select)(PassSecond);
+export default connect(select)(translate(PassSecond));

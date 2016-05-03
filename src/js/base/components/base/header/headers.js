@@ -1,7 +1,8 @@
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 
-export const DefaultHeader = () => {
+export const DefaultHeader = (props) => {
+  const { __ } = props;
   const src = `/static/mobile/images/${window.data.project}/logo.png`;
 
   return (
@@ -21,12 +22,16 @@ export const DefaultHeader = () => {
   );
 };
 
+DefaultHeader.propTypes = {
+  __: PropTypes.func,
+};
+
 export const HeaderNested = (props) => {
-  const { title, cb } = props;
+  const { title, cb, __ } = props;
   return (
     <header className="header">
       <a className="header__arrow-back" href="#" onClick={cb}></a>
-      <h3 className="event-container__title event-container__header-title">{title}</h3>
+      <h3 className="event-container__title event-container__header-title">{__(title)}</h3>
     </header>
   );
 };
@@ -34,10 +39,11 @@ export const HeaderNested = (props) => {
 HeaderNested.propTypes = {
   title: PropTypes.string,
   cb: PropTypes.func,
+  __: PropTypes.func,
 };
 
 export const HeaderLogin = (props) => {
-  const { balance, currency, cb } = props;
+  const { balance, currency, cb, __ } = props;
   return (
     <header className="header">
       <a className="header__arrow-back header__menu-button" href="#" onClick={cb}>
@@ -55,4 +61,5 @@ HeaderLogin.propTypes = {
   balance: PropTypes.number,
   currency: PropTypes.string,
   cb: PropTypes.func,
+  __: PropTypes.func,
 };

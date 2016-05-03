@@ -50,11 +50,11 @@ gulp.task('po2json', function() {
 
 gulp.task('js2json', function() {
   var pathDirCasino = '../locale/' + _CASINO + 'casino';
-  
+
   var listDirs = fs.readdirSync(pathDirCasino).filter(function(dir) {
     return  fs.statSync(path.join(pathDirCasino, dir)).isDirectory();
   });
-  
+
   return gulp.src(['src/**/*.js'])
     .pipe(scanner({
       func: {
@@ -79,7 +79,7 @@ gulp.task('json2po', function() {
   var listDirs = fs.readdirSync(pathDirCasino).filter(function(dir) {
     return  fs.statSync(path.join(pathDirCasino, dir)).isDirectory();
   });
-  
+
   listDirs.forEach(function(dir) {
     var source = path.resolve(__dirname, './localization/' + _CASINO + 'casino/' + dir + '.json');
     var target = path.resolve(__dirname, './localization-po/' + _CASINO + 'casino/' + dir + '/vulkan-mobile.po');
@@ -105,7 +105,6 @@ gulp.task('sprite', function () {
   })
 
   updatelistDirs.map(function(dir) {
-    console.log(dir);
     var spriteData = gulp.src(dir.path)
       .pipe(spritesmith({
         imgName: dir.name + '.png',
@@ -152,7 +151,7 @@ gulp.task('webpack', function(callback) {
     'webpack/hot/only-dev-server',
     path.join(__dirname, 'src', 'js', _CASINO)
   ];
-  
+
   var plugins = [
     new webpack.HotModuleReplacementPlugin()
   ];
@@ -165,7 +164,7 @@ gulp.task('webpack', function(callback) {
         unsafe:       true
       }
     }))
-    
+
     entryWebpack = [ path.join(__dirname, 'src', 'js', _CASINO) ];
   }
   var compiler = webpack({

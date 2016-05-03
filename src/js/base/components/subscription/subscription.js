@@ -1,17 +1,18 @@
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
+import { translate } from './../translation/transform';
 
-export const Subscription = (props) => {
-  const { url, btn, urltext, name, msg, msgColor } = props;
+const Subscription = (props) => {
+  const { url, btn, urltext, name, msg, msgColor, __, long } = props;
   const classNameLink = btn ? `btn btn--align btn--${btn}` : '';
-  const markUpLink = <Link to={url} className={classNameLink}>{urltext}</Link>;
+  const markUpLink = <Link to={url} className={classNameLink}>{__(urltext)}</Link>;
   const link = url ? markUpLink : '';
 
   return (
     <div className={`blue-section default-subscription section-${name}`}>
       <div>
         <i className={`icon--${name}`}></i>
-        <p className={`default-container__title ${msgColor || 'white'}`}>{msg}</p>
+        <p className={`default-container__title ${msgColor || 'white'}`}>{long ? msg : __(msg)}</p>
         {link}
       </div>
     </div>
@@ -26,4 +27,8 @@ Subscription.propTypes = {
   name: PropTypes.string,
   msg: PropTypes.string,
   msgColor: PropTypes.string,
+  __: PropTypes.func,
+  long: PropTypes.string,
 };
+
+export default translate(Subscription);

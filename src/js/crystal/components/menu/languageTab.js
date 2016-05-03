@@ -38,13 +38,13 @@ class LangTab extends Component {
         },
       };
       this.props.dispatch(fetchLanguage(data));
-    } else {
-      this.props.dispatch(setVisibilityNavigation());
     }
+    document.body.scrollTop = 0;
+    this.props.dispatch(setVisibilityNavigation());
   }
 
   render() {
-    const { visible, handler, locale } = this.props;
+    const { visible, handler, locale, __ } = this.props;
     const classVisible = visible ? '' : 'hidden';
     let activeRus = '';
     let activeEng = '';
@@ -99,6 +99,7 @@ LangTab.propTypes = {
   xsrf: PropTypes.string,
   visible: PropTypes.bool,
   handler: PropTypes.func,
+  __: PropTypes.func,
 };
 
 const select = (state) => ({

@@ -20,18 +20,23 @@ class Rules extends Component {
   componentWillMount() {
     const { routing, responsibleRules } = this.props;
     const path = routing.replace(/\//g, '');
-    if (!responsibleRules[path]) {
-      this.props.dispatch(loadResponsibleRules(path));
+    const lang = window.data.lang;
+    const page = responsibleRules[path];
+    const pageLang = page ? page[lang] : '';
+    if (!page || !pageLang || pageLang.error) {
+      this.props.dispatch(loadResponsibleRules(path, lang));
     }
   }
 
   render() {
     const { responsibleRules, routing } = this.props;
     const path = routing.replace(/\//g, '');
+    const page = responsibleRules[path];
+    const pageLang = page ? page[window.data.lang] : '';
     let tmp;
 
-    if (responsibleRules[path] && !responsibleRules[path].error) {
-      tmp = decodeHtmlEntities(responsibleRules[path].textPage.description);
+    if (page && pageLang && !pageLang.error) {
+      tmp = decodeHtmlEntities(pageLang.textPage.description);
     }
 
     return (

@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 // import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-
+import { translate } from './../../base/components/translation/transform';
 import { setVisibilityNavigation } from '../../base/actions/navigation';
 import { ws, fetchSSIDURL } from '../../base/actions/webSocket';
 
@@ -55,7 +55,7 @@ class App extends Component {
   }
 
   render() {
-    const { visibleNav, user, routes, location } = this.props;
+    const { visibleNav, user, routes, location, __ } = this.props;
     const nav = user ? <Nav {...user} /> : null;
     const title = routes[routes.length - 1].name;
     const key = location.pathname;
@@ -67,7 +67,7 @@ class App extends Component {
     let langBox = null;
 
     if (!user && !title && !localStorage.getItem('LanguageCRYST')) {
-      langBox = <ChooseLangBox />;
+      langBox = <ChooseLangBox __={__} />;
     }
     if ((match === null) || match.length < 2) {
       url = '/';
@@ -76,7 +76,7 @@ class App extends Component {
     }
 
     // direction = match ? 'right' : 'left';
-    const translate = visibleNav ? 'translate' : '';
+    const translation = visibleNav ? 'translate' : '';
 
     // const transitionProps = {
     //   component: 'div',
@@ -87,7 +87,7 @@ class App extends Component {
     // };
 
     return (
-      <div className={`wrapper ${translate}`}>
+      <div className={`wrapper ${translation}`}>
         <a href="#" className="wrapper--trigger-menu" onClick={this.triggerNav}>.</a>
         <Header title={title} url={url} />
         {nav}
@@ -109,15 +109,17 @@ App.propTypes = {
   routes: PropTypes.array,
   location: PropTypes.object,
   children: PropTypes.object,
+  __: PropTypes.func,
 };
 
 const select = (state) => ({
   visibleNav: state.visibilityNavigation,
   user: state.authorization.user,
   stream: state.stream,
+  locale: state.locale,
 });
 
-export default connect(select)(App);
+export default connect(select)(translate(App));
 
 
 // <ReactCSSTransitionGroup {...transitionProps}>

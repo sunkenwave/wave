@@ -16,7 +16,7 @@ class ListInner extends Component {
   }
 
   render() {
-    const { title, icon, link } = this.props;
+    const { title, icon, link, __ } = this.props;
 
     return (
       <li className="menu__navigation-inner-item" onClick={this.triggerNav}>
@@ -24,7 +24,7 @@ class ListInner extends Component {
           <div className="menu__icon__align">
             <i className={`menu__icon ${icon}`}></i>
           </div>
-          <span>{title}</span>
+          <span>{__(title)}</span>
         </Link>
       </li>
     );
@@ -36,6 +36,7 @@ ListInner.propTypes = {
   title: PropTypes.string,
   icon: PropTypes.string,
   link: PropTypes.string,
+  __: PropTypes.func,
 };
 
 export default connect()(ListInner);

@@ -5,7 +5,7 @@ import { Link } from 'react-router';
 import { DefaultContainer } from '../templates/defaultContainer';
 import { loadGame } from '../../actions/game';
 
-const project = data.project.slice(0, -6);
+const project = window.data.project.slice(0, -6);
 const newGames = require(`../../../${project}/components/games/gamesData.js`).newGames;
 const topGames = require(`../../../${project}/components/games/gamesData.js`).topGames;
 

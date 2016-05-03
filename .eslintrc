@@ -1,0 +1,10 @@
+{
+  "extends": ["airbnb"],
+  "parser": "babel-eslint"
+}
+
+/* global dependencies */
+// sudo npm i -g eslint eslint-plugin-react eslint-config-airbnb babel-eslint
+
+/* create report */
+// eslint src/js/**/*.js -f node_modules/eslint-html-reporter/reporter.js -o eslint-report.html

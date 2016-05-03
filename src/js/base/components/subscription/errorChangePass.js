@@ -1,11 +1,11 @@
 import React from 'react';
-import { Subscription } from './subscription';
+import Subscription from './subscription';
 
 const ErrorChangePass = () => {
   const propsSubscription = {
     name: 'error',
     url: '#',
-    msg: __('This promo code is expired'),
+    msg: 'This promo code is expired',
     msgColor: 'red',
     btn: 'danger',
     urltext: 'ok',

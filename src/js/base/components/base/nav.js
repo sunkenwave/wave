@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-
+import { translate } from './../translation/transform';
 import { setVisibilityNavigation } from '../../actions/navigation';
 import { fetchLogout } from '../../actions/logout';
 
@@ -31,8 +31,7 @@ class Nav extends Component {
   }
 
   render() {
-    const { avatar, email, balance, currency } = this.props;
-
+    const { avatar, email, balance, currency, __ } = this.props;
     const propsBalance = {
       name: 'menu-balance',
       topTitle: __('Balance'),
@@ -69,10 +68,13 @@ Nav.propTypes = {
   avatar: PropTypes.string,
   balance: PropTypes.number,
   currency: PropTypes.string,
+  locale: PropTypes.string,
+  __: PropTypes.func,
 };
 
 const select = (state) => ({
   user: state.authorization.user,
+  locale: state.locale,
 });
 
-export default connect(select)(Nav);
+export default connect(select)(translate(Nav));

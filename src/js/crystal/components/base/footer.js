@@ -1,4 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
+import { translate } from './../../../base/components/translation/transform';
+import { connect } from 'react-redux';
 
 class Footer extends Component {
   constructor(props) {
@@ -13,6 +15,7 @@ class Footer extends Component {
   }
 
   render() {
+    const { __ } = this.props;
     const email = 'support@crystalcasino.com';
     const phone = '+74993462030';
     const phoneLabel = '+7 (499) 346-20-30';
@@ -55,4 +58,14 @@ class Footer extends Component {
   }
 }
 
-export default Footer;
+Footer.propTypes = {
+  locale: PropTypes.string,
+  __: PropTypes.func,
+};
+
+const select = (state) => ({
+  locale: state.locale,
+});
+
+export default connect(select)(translate(Footer));
+

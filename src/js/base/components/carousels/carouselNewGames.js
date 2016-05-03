@@ -3,7 +3,7 @@ import Slider from 'react-slick';
 import { connect } from 'react-redux';
 import { slideOne } from './slideIndicator';
 import { Link } from 'react-router';
-const project = data.project.slice(0, -6);
+const project = window.data.project.slice(0, -6);
 const newGames = require(`../../../${project}/components/games/gamesData.js`).newGames;
 
 const settingsTabs = {

@@ -1,5 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
+import { translate } from '../translation/transform';
+
 
 class StatusContainer extends Component {
   constructor(props) {
@@ -32,7 +34,7 @@ class StatusContainer extends Component {
   }
 
   render() {
-    const { user } = this.props;
+    const { user, __ } = this.props;
     const stars = [];
     let countStar = user.sublevel;
 
@@ -72,10 +74,13 @@ class StatusContainer extends Component {
 
 StatusContainer.propTypes = {
   user: PropTypes.object,
+  locale: PropTypes.string,
+  __: PropTypes.func,
 };
 
 const select = (state) => ({
   user: state.authorization.user,
+  locale: state.locale,
 });
 
-export default connect(select)(StatusContainer);
+export default connect(select)(translate(StatusContainer));

@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
+import { translate } from './../translation/transform';
 
 import { SocialLogin } from './socialLogin';
 
@@ -80,7 +81,7 @@ class Login extends Component {
   }
 
   render() {
-    const { error } = this.props;
+    const { error, __ } = this.props;
 
     const errMsgLogin = error ? null : __('Incorrect e-mail');
     const errMsgPass = error || __('You didn`t fill the password field');
@@ -120,7 +121,7 @@ class Login extends Component {
 
     return (
       <div className="blue-section registration">
-        <SocialLogin />
+        <SocialLogin __={__} />
         <form className="registration--form">
           <div className="registration--form-box">
             <input {...propsEmailInput} onFocus={this.removeError} />
@@ -154,6 +155,7 @@ Login.propTypes = {
     PropTypes.object,
   ]),
   xsrf: PropTypes.string,
+  __: PropTypes.func,
 };
 
 const select = (state) => ({
@@ -161,4 +163,4 @@ const select = (state) => ({
   xsrf: state.xsrf,
 });
 
-export default connect(select)(Login);
+export default connect(select)(translate(Login));

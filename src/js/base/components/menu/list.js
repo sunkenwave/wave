@@ -2,8 +2,8 @@ import React, { PropTypes } from 'react';
 import ListInner from './listInner';
 
 export const List = (props) => {
-  const { icon, title, inner, visible, handler } = props;
-  const innerList = inner ? inner.map((item, i) => <ListInner {...item} key={i} />) : null;
+  const { icon, title, inner, visible, handler, __ } = props;
+  const innerList = inner ? inner.map((item, i) => <ListInner {...item} key={i} __={__} />) : null;
   const classVisible = visible ? '' : 'hidden';
 
   const prevent = (e) => e.preventDefault();
@@ -14,7 +14,7 @@ export const List = (props) => {
         <div className="menu__icon__align">
           <i className={`menu__icon ${icon}`}></i>
         </div>
-        <span>{title}</span>
+        <span>{__(title)}</span>
       </a>
       <ul className={`menu__navigation-inner ${classVisible}`}>
         {innerList}
@@ -29,4 +29,5 @@ List.propTypes = {
   inner: PropTypes.array,
   visible: PropTypes.bool,
   handler: PropTypes.func,
+  __: PropTypes.func,
 };
