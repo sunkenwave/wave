@@ -1,0 +1,25 @@
+.registration-bonus {
+  text-align: center;
+  .promotion-section {
+    &__title {
+      margin-bottom: 7px;
+      font-size: 1.1em;
+      &-big {
+        font-size: 1.3em;
+      }
+    }
+    &__bonus {
+      margin-bottom: 5px;
+    }
+  }
+  &--gray-msg {
+    font-size: 1.2em;
+    line-height: 1.1em;
+    margin-top: 17px;
+  }
+  .blue{
+    font-size: 1.2em;
+    margin: 11px 0 9px;
+    display: inline-block;
+  }
+}

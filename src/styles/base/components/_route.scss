@@ -1,0 +1,39 @@
+.route-outer-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+.route-transition-group {
+  width: 200%;
+  overflow: hidden;
+}
+.route-inner-wrapper {
+  width: 50%;
+  float: right;
+  overflow: hidden;
+  transition: transform .5s;
+
+  &:first-child {
+    position: relative;
+    left: -50%;
+  }
+}
+.route-right-enter {
+  transform: translate3d(100%, 0, 0);
+}
+.route-left-enter {
+  transform: translate3d(-100%, 0, 0);
+}
+
+.route-right-enter-active,
+.route-left-enter-active,
+.route-right-leave,
+.route-left-leave {
+  transform: translate3d(0, 0, 0);
+}
+
+.route-right-leave-active {
+  transform: translate3d(-100%, 0, 0);
+}
+.route-left-leave-active {
+  transform: translate3d(100%, 0, 0);
+}

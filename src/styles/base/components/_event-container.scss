@@ -1,0 +1,60 @@
+.event-container {
+  padding: 10px 5%;
+
+  &__title {
+    margin: 15px 0;
+    font-size: 1.3em;
+    font-weight: bold;
+    text-align: center;
+    &-text-left{
+      text-align: left;
+      lost-utility: clearfix;
+    }
+    &-pretext{
+      float: right;
+      font-size: 0.8em;
+      position: relative;
+      top: 4px;
+    }
+  }
+
+  &__header-title {
+    line-height: 25px;
+    font-size: 1.1em;
+  }
+
+  &-tournaments {
+    padding: 0;
+    .event-container__title {
+      margin:10px 0 20px;
+    }
+    .default-container {
+      margin: 15px 0;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      &__title {
+        margin-bottom: 10px;
+        font-size: 1.1em;
+      }
+      &__date,
+      &__name {
+        display: block;
+        font-size: 1em;
+      }
+      &__description {
+        padding: 12px 0;
+      }
+      &__name {
+        margin-bottom: 3px;
+      }
+    }
+  }
+
+  &-tabs {
+    margin-bottom: 10px;
+    .default-container__title {
+      margin-bottom: -2px;
+    }
+  }
+}

@@ -1,0 +1,80 @@
+.ticket-section {
+  margin-top: -10px;
+  .small-text {
+    display: block;
+    margin-top: 5px;
+  }
+  .gray-msg {
+    font-size: 0.9em;
+  }
+  span {
+    font-weight: 700;
+  }
+  h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    line-height: 1.1em;
+  }
+  p {
+    line-height: 1.2em;
+    font-weight: 700;
+    font-size: 0.9em;
+  }
+}
+
+.push-chat {
+  .triangle {
+    top: 8px;
+    display: block;
+    position: absolute;
+    border-top: 11px solid transparent;
+    border-bottom: 11px solid transparent;
+  }
+  margin: 20px 0;
+  &--watch {
+    padding: 0 10px;
+  }
+  &--msg {
+    border-radius: 5px;
+    margin-bottom: 10px;
+    lost-utility: clearfix;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    .gray-msg {
+      display: block;
+      font-size: 0.8em;
+    }
+    &-green {
+      background: linear-gradient(to top, #19883e, #3dc754 100%);
+      margin-right: 10%;
+      .triangle {
+        border-right: 11px solid #42B355;
+        left: -9px;
+      }
+      & + .gray-msg {
+        margin: 4px 0 0 10px;
+      }
+    }
+    &-blue {
+      background: linear-gradient(to top, #204b95, #5281c2 100%);
+      margin-left: 10%;
+      .triangle {
+        border-left: 11px solid #4271B5;
+        right: -9px;
+      }
+      & + .gray-msg {
+        float: right;
+        margin: 4px 20px 0 0;
+      }
+    }
+    &--part {
+      padding: 10px;
+      border-radius: 5px;
+      position: relative;
+      span {
+
+      }
+    }
+  }
+}

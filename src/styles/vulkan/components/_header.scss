@@ -1,0 +1,8 @@
+@import '../../base/components/header';
+
+.header {
+  background-image: linear-gradient(to bottom, #0c1021, #252736 87%, #1b1d2b);
+  &__logo-img {
+    top: -4px;
+  }
+}

@@ -1,0 +1,13 @@
+@import '../../base/components/header';
+
+.header {
+  background-image: linear-gradient(to bottom, #2e2e2e 25%, #121212 70%, #000);
+  &__logo-img {
+    left: 4px;
+  }
+  &__arrow-back{
+    &::after{
+      background-image: linear-gradient(to bottom, #3b3b3b 25%, #212121 70%, #000);
+    }
+  }
+}

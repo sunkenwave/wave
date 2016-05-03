@@ -1,0 +1,23 @@
+@import '../../base/components/event-container';
+
+.event-container {
+
+  &__title {
+    color: #fff;
+    &-pretext {
+      color: #0395e7;
+    }
+  }
+
+  &-tournaments {
+    .default-container {
+      &__title {
+        color: #fff;
+      }
+      &__date,
+      &__name {
+        color: $yellow;
+      }
+    }
+  }
+}

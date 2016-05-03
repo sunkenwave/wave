@@ -1,0 +1,41 @@
+.btn {
+  border: none;
+  box-shadow: (0 1px 10px rgba(0, 0, 0, .5));
+  font-size: 1em;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  color: $btn-color;
+  height: $btn-height;
+  line-height: $btn-height;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 300px;
+
+  &:active {
+    opacity: .9;
+  }
+
+  &--footer-support {
+    height: 60px;
+  }
+  &--load {
+    width: 82%;
+    display: inline-block;
+    margin-top: 20px;
+  }
+  &--align {
+    margin: 0 auto;
+  }
+}
+
+input.btn {
+  display: block;
+}
+
+#sh_button {
+  display: none !important;
+}

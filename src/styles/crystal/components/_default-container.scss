@@ -1,0 +1,38 @@
+@import '../../base/components/default-container';
+
+.default-container {
+  &--game {
+    background: $back-layout;
+  }
+  &--game-new {
+    background: $back-layout;
+  }
+  &--share {
+    background: $back-layout;
+  }
+  &--event {
+    background: $back-layout;
+
+    .default-container__description {
+      .default-container__title {
+        color: #eb212e;
+      }
+    }
+  }
+  &--vip {
+    box-shadow: 0 2px 9px 3px rgba(0, 0, 0, .5);
+    .default-container__description {
+      .default-container__title {
+        color: $yellow;
+      }
+    }
+  }
+  &__cover {
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.75);
+  }
+  &__title {
+    &--yellow {
+      color: $yellow;
+    }
+  }
+}

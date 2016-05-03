@@ -1,0 +1,45 @@
+@import '../base/base';
+
+.container {
+  background: $app-bg;
+}
+
+.thumb__back-layer {
+  box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+  background-image: linear-gradient(to bottom, #15456d, #073459 3%, #052442 45%);
+  height: $thumb__back-layer-height;
+}
+
+.hr {
+  border-top: 1px solid #313445;
+  border-bottom: 1px solid #0d0e15;
+
+  &:before {
+    background: radial-gradient(50% 100%, 50% 15px, #0d0e15 0%, transparent 100%);
+  }
+
+  &:after {
+    background: radial-gradient(50% 0%, 50% 15px, #313445 0%, transparent 100%);
+  }
+}
+
+.blue-section {
+  background: $back-layout;
+}
+
+table {
+  border: 1px solid #13436a;
+  th,
+  td {
+    background: #052442;
+    border: 1px solid #13436a;
+  }
+  th {
+    background: #111e31;
+    color: #94969f;
+  }
+}
+
+.blue {
+  color: $text-color-info;
+}

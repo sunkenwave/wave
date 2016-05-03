@@ -1,0 +1,426 @@
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+$icon-action-name: 'icon-action';
+$icon-action-x: 46px;
+$icon-action-y: 0px;
+$icon-action-offset-x: -46px;
+$icon-action-offset-y: 0px;
+$icon-action-width: 36px;
+$icon-action-height: 36px;
+$icon-action-total-width: 263px;
+$icon-action-total-height: 257px;
+$icon-action-image: '/static/mobile/images/crystalcasino/sprites/menu-icons.png';
+$icon-action: (46px, 0px, -46px, 0px, 36px, 36px, 263px, 257px, '/static/mobile/images/crystalcasino/sprites/menu-icons.png', 'icon-action', );
+$icon-activate-coupon-name: 'icon-activate-coupon';
+$icon-activate-coupon-x: 0px;
+$icon-activate-coupon-y: 92px;
+$icon-activate-coupon-offset-x: 0px;
+$icon-activate-coupon-offset-y: -92px;
+$icon-activate-coupon-width: 36px;
+$icon-activate-coupon-height: 36px;
+$icon-activate-coupon-total-width: 263px;
+$icon-activate-coupon-total-height: 257px;
+$icon-activate-coupon-image: '/static/mobile/images/crystalcasino/sprites/menu-icons.png';
+$icon-activate-coupon: (0px, 92px, 0px, -92px, 36px, 36px, 263px, 257px, '/static/mobile/images/crystalcasino/sprites/menu-icons.png', 'icon-activate-coupon', );
+$icon-all-games-name: 'icon-all-games';
+$icon-all-games-x: 45px;
+$icon-all-games-y: 183px;
+$icon-all-games-offset-x: -45px;
+$icon-all-games-offset-y: -183px;
+$icon-all-games-width: 35px;
+$icon-all-games-height: 35px;
+$icon-all-games-total-width: 263px;
+$icon-all-games-total-height: 257px;
+$icon-all-games-image: '/static/mobile/images/crystalcasino/sprites/menu-icons.png';
+$icon-all-games: (45px, 183px, -45px, -183px, 35px, 35px, 263px, 257px, '/static/mobile/images/crystalcasino/sprites/menu-icons.png', 'icon-all-games', );
+$icon-antifraud-name: 'icon-antifraud';
+$icon-antifraud-x: 46px;
+$icon-antifraud-y: 46px;
+$icon-antifraud-offset-x: -46px;
+$icon-antifraud-offset-y: -46px;
+$icon-antifraud-width: 36px;
+$icon-antifraud-height: 36px;
+$icon-antifraud-total-width: 263px;
+$icon-antifraud-total-height: 257px;
+$icon-antifraud-image: '/static/mobile/images/crystalcasino/sprites/menu-icons.png';
+$icon-antifraud: (46px, 46px, -46px, -46px, 36px, 36px, 263px, 257px, '/static/mobile/images/crystalcasino/sprites/menu-icons.png', 'icon-antifraud', );
+$icon-cash-name: 'icon-cash';
+$icon-cash-x: 92px;
+$icon-cash-y: 0px;
+$icon-cash-offset-x: -92px;
+$icon-cash-offset-y: 0px;
+$icon-cash-width: 36px;
+$icon-cash-height: 36px;
+$icon-cash-total-width: 263px;
+$icon-cash-total-height: 257px;
+$icon-cash-image: '/static/mobile/images/crystalcasino/sprites/menu-icons.png';
+$icon-cash: (92px, 0px, -92px, 0px, 36px, 36px, 263px, 257px, '/static/mobile/images/crystalcasino/sprites/menu-icons.png', 'icon-cash', );
+$icon-change-point-name: 'icon-change-point';
+$icon-change-point-x: 46px;
+$icon-change-point-y: 138px;
+$icon-change-point-offset-x: -46px;
+$icon-change-point-offset-y: -138px;
+$icon-change-point-width: 39px;
+$icon-change-point-height: 32px;
+$icon-change-point-total-width: 263px;
+$icon-change-point-total-height: 257px;
+$icon-change-point-image: '/static/mobile/images/crystalcasino/sprites/menu-icons.png';
+$icon-change-point: (46px, 138px, -46px, -138px, 39px, 32px, 263px, 257px, '/static/mobile/images/crystalcasino/sprites/menu-icons.png', 'icon-change-point', );
+$icon-deposit-name: 'icon-deposit';
+$icon-deposit-x: 0px;
+$icon-deposit-y: 138px;
+$icon-deposit-offset-x: 0px;
+$icon-deposit-offset-y: -138px;
+$icon-deposit-width: 36px;
+$icon-deposit-height: 35px;
+$icon-deposit-total-width: 263px;
+$icon-deposit-total-height: 257px;
+$icon-deposit-image: '/static/mobile/images/crystalcasino/sprites/menu-icons.png';
+$icon-deposit: (0px, 138px, 0px, -138px, 36px, 35px, 263px, 257px, '/static/mobile/images/crystalcasino/sprites/menu-icons.png', 'icon-deposit', );
+$icon-display-name: 'icon-display';
+$icon-display-x: 228px;
+$icon-display-y: 0px;
+$icon-display-offset-x: -228px;
+$icon-display-offset-y: 0px;
+$icon-display-width: 35px;
+$icon-display-height: 32px;
+$icon-display-total-width: 263px;
+$icon-display-total-height: 257px;
+$icon-display-image: '/static/mobile/images/crystalcasino/sprites/menu-icons.png';
+$icon-display: (228px, 0px, -228px, 0px, 35px, 32px, 263px, 257px, '/static/mobile/images/crystalcasino/sprites/menu-icons.png', 'icon-display', );
+$icon-fair-game-name: 'icon-fair-game';
+$icon-fair-game-x: 0px;
+$icon-fair-game-y: 183px;
+$icon-fair-game-offset-x: 0px;
+$icon-fair-game-offset-y: -183px;
+$icon-fair-game-width: 35px;
+$icon-fair-game-height: 35px;
+$icon-fair-game-total-width: 263px;
+$icon-fair-game-total-height: 257px;
+$icon-fair-game-image: '/static/mobile/images/crystalcasino/sprites/menu-icons.png';
+$icon-fair-game: (0px, 183px, 0px, -183px, 35px, 35px, 263px, 257px, '/static/mobile/images/crystalcasino/sprites/menu-icons.png', 'icon-fair-game', );
+$icon-faq-name: 'icon-faq';
+$icon-faq-x: 138px;
+$icon-faq-y: 0px;
+$icon-faq-offset-x: -138px;
+$icon-faq-offset-y: 0px;
+$icon-faq-width: 36px;
+$icon-faq-height: 36px;
+$icon-faq-total-width: 263px;
+$icon-faq-total-height: 257px;
+$icon-faq-image: '/static/mobile/images/crystalcasino/sprites/menu-icons.png';
+$icon-faq: (138px, 0px, -138px, 0px, 36px, 36px, 263px, 257px, '/static/mobile/images/crystalcasino/sprites/menu-icons.png', 'icon-faq', );
+$icon-games-name: 'icon-games';
+$icon-games-x: 184px;
+$icon-games-y: 0px;
+$icon-games-offset-x: -184px;
+$icon-games-offset-y: 0px;
+$icon-games-width: 34px;
+$icon-games-height: 37px;
+$icon-games-total-width: 263px;
+$icon-games-total-height: 257px;
+$icon-games-image: '/static/mobile/images/crystalcasino/sprites/menu-icons.png';
+$icon-games: (184px, 0px, -184px, 0px, 34px, 37px, 263px, 257px, '/static/mobile/images/crystalcasino/sprites/menu-icons.png', 'icon-games', );
+$icon-hands-name: 'icon-hands';
+$icon-hands-x: 92px;
+$icon-hands-y: 92px;
+$icon-hands-offset-x: -92px;
+$icon-hands-offset-y: -92px;
+$icon-hands-width: 36px;
+$icon-hands-height: 36px;
+$icon-hands-total-width: 263px;
+$icon-hands-total-height: 257px;
+$icon-hands-image: '/static/mobile/images/crystalcasino/sprites/menu-icons.png';
+$icon-hands: (92px, 92px, -92px, -92px, 36px, 36px, 263px, 257px, '/static/mobile/images/crystalcasino/sprites/menu-icons.png', 'icon-hands', );
+$icon-history-name: 'icon-history';
+$icon-history-x: 181px;
+$icon-history-y: 183px;
+$icon-history-offset-x: -181px;
+$icon-history-offset-y: -183px;
+$icon-history-width: 35px;
+$icon-history-height: 32px;
+$icon-history-total-width: 263px;
+$icon-history-total-height: 257px;
+$icon-history-image: '/static/mobile/images/crystalcasino/sprites/menu-icons.png';
+$icon-history: (181px, 183px, -181px, -183px, 35px, 32px, 263px, 257px, '/static/mobile/images/crystalcasino/sprites/menu-icons.png', 'icon-history', );
+$icon-info-name: 'icon-info';
+$icon-info-x: 46px;
+$icon-info-y: 92px;
+$icon-info-offset-x: -46px;
+$icon-info-offset-y: -92px;
+$icon-info-width: 36px;
+$icon-info-height: 36px;
+$icon-info-total-width: 263px;
+$icon-info-total-height: 257px;
+$icon-info-image: '/static/mobile/images/crystalcasino/sprites/menu-icons.png';
+$icon-info: (46px, 92px, -46px, -92px, 36px, 36px, 263px, 257px, '/static/mobile/images/crystalcasino/sprites/menu-icons.png', 'icon-info', );
+$icon-lock-name: 'icon-lock';
+$icon-lock-x: 228px;
+$icon-lock-y: 180px;
+$icon-lock-offset-x: -228px;
+$icon-lock-offset-y: -180px;
+$icon-lock-width: 29px;
+$icon-lock-height: 36px;
+$icon-lock-total-width: 263px;
+$icon-lock-total-height: 257px;
+$icon-lock-image: '/static/mobile/images/crystalcasino/sprites/menu-icons.png';
+$icon-lock: (228px, 180px, -228px, -180px, 29px, 36px, 263px, 257px, '/static/mobile/images/crystalcasino/sprites/menu-icons.png', 'icon-lock', );
+$icon-lottery-name: 'icon-lottery';
+$icon-lottery-x: 0px;
+$icon-lottery-y: 0px;
+$icon-lottery-offset-x: 0px;
+$icon-lottery-offset-y: 0px;
+$icon-lottery-width: 36px;
+$icon-lottery-height: 36px;
+$icon-lottery-total-width: 263px;
+$icon-lottery-total-height: 257px;
+$icon-lottery-image: '/static/mobile/images/crystalcasino/sprites/menu-icons.png';
+$icon-lottery: (0px, 0px, 0px, 0px, 36px, 36px, 263px, 257px, '/static/mobile/images/crystalcasino/sprites/menu-icons.png', 'icon-lottery', );
+$icon-new-games-name: 'icon-new-games';
+$icon-new-games-x: 184px;
+$icon-new-games-y: 47px;
+$icon-new-games-offset-x: -184px;
+$icon-new-games-offset-y: -47px;
+$icon-new-games-width: 32px;
+$icon-new-games-height: 32px;
+$icon-new-games-total-width: 263px;
+$icon-new-games-total-height: 257px;
+$icon-new-games-image: '/static/mobile/images/crystalcasino/sprites/menu-icons.png';
+$icon-new-games: (184px, 47px, -184px, -47px, 32px, 32px, 263px, 257px, '/static/mobile/images/crystalcasino/sprites/menu-icons.png', 'icon-new-games', );
+$icon-profile-name: 'icon-profile';
+$icon-profile-x: 0px;
+$icon-profile-y: 228px;
+$icon-profile-offset-x: 0px;
+$icon-profile-offset-y: -228px;
+$icon-profile-width: 36px;
+$icon-profile-height: 29px;
+$icon-profile-total-width: 263px;
+$icon-profile-total-height: 257px;
+$icon-profile-image: '/static/mobile/images/crystalcasino/sprites/menu-icons.png';
+$icon-profile: (0px, 228px, 0px, -228px, 36px, 29px, 263px, 257px, '/static/mobile/images/crystalcasino/sprites/menu-icons.png', 'icon-profile', );
+$icon-promotion-name: 'icon-promotion';
+$icon-promotion-x: 138px;
+$icon-promotion-y: 92px;
+$icon-promotion-offset-x: -138px;
+$icon-promotion-offset-y: -92px;
+$icon-promotion-width: 36px;
+$icon-promotion-height: 35px;
+$icon-promotion-total-width: 263px;
+$icon-promotion-total-height: 257px;
+$icon-promotion-image: '/static/mobile/images/crystalcasino/sprites/menu-icons.png';
+$icon-promotion: (138px, 92px, -138px, -92px, 36px, 35px, 263px, 257px, '/static/mobile/images/crystalcasino/sprites/menu-icons.png', 'icon-promotion', );
+$icon-protection-name: 'icon-protection';
+$icon-protection-x: 228px;
+$icon-protection-y: 42px;
+$icon-protection-offset-x: -228px;
+$icon-protection-offset-y: -42px;
+$icon-protection-width: 30px;
+$icon-protection-height: 36px;
+$icon-protection-total-width: 263px;
+$icon-protection-total-height: 257px;
+$icon-protection-image: '/static/mobile/images/crystalcasino/sprites/menu-icons.png';
+$icon-protection: (228px, 42px, -228px, -42px, 30px, 36px, 263px, 257px, '/static/mobile/images/crystalcasino/sprites/menu-icons.png', 'icon-protection', );
+$icon-rules-name: 'icon-rules';
+$icon-rules-x: 228px;
+$icon-rules-y: 88px;
+$icon-rules-offset-x: -228px;
+$icon-rules-offset-y: -88px;
+$icon-rules-width: 30px;
+$icon-rules-height: 36px;
+$icon-rules-total-width: 263px;
+$icon-rules-total-height: 257px;
+$icon-rules-image: '/static/mobile/images/crystalcasino/sprites/menu-icons.png';
+$icon-rules: (228px, 88px, -228px, -88px, 30px, 36px, 263px, 257px, '/static/mobile/images/crystalcasino/sprites/menu-icons.png', 'icon-rules', );
+$icon-russia-name: 'icon-russia';
+$icon-russia-x: 184px;
+$icon-russia-y: 126px;
+$icon-russia-offset-x: -184px;
+$icon-russia-offset-y: -126px;
+$icon-russia-width: 34px;
+$icon-russia-height: 24px;
+$icon-russia-total-width: 263px;
+$icon-russia-total-height: 257px;
+$icon-russia-image: '/static/mobile/images/crystalcasino/sprites/menu-icons.png';
+$icon-russia: (184px, 126px, -184px, -126px, 34px, 24px, 263px, 257px, '/static/mobile/images/crystalcasino/sprites/menu-icons.png', 'icon-russia', );
+$icon-stop-name: 'icon-stop';
+$icon-stop-x: 92px;
+$icon-stop-y: 46px;
+$icon-stop-offset-x: -92px;
+$icon-stop-offset-y: -46px;
+$icon-stop-width: 36px;
+$icon-stop-height: 36px;
+$icon-stop-total-width: 263px;
+$icon-stop-total-height: 257px;
+$icon-stop-image: '/static/mobile/images/crystalcasino/sprites/menu-icons.png';
+$icon-stop: (92px, 46px, -92px, -46px, 36px, 36px, 263px, 257px, '/static/mobile/images/crystalcasino/sprites/menu-icons.png', 'icon-stop', );
+$icon-super-lottery-name: 'icon-super-lottery';
+$icon-super-lottery-x: 0px;
+$icon-super-lottery-y: 46px;
+$icon-super-lottery-offset-x: 0px;
+$icon-super-lottery-offset-y: -46px;
+$icon-super-lottery-width: 36px;
+$icon-super-lottery-height: 36px;
+$icon-super-lottery-total-width: 263px;
+$icon-super-lottery-total-height: 257px;
+$icon-super-lottery-image: '/static/mobile/images/crystalcasino/sprites/menu-icons.png';
+$icon-super-lottery: (0px, 46px, 0px, -46px, 36px, 36px, 263px, 257px, '/static/mobile/images/crystalcasino/sprites/menu-icons.png', 'icon-super-lottery', );
+$icon-ticket-name: 'icon-ticket';
+$icon-ticket-x: 90px;
+$icon-ticket-y: 183px;
+$icon-ticket-offset-x: -90px;
+$icon-ticket-offset-y: -183px;
+$icon-ticket-width: 35px;
+$icon-ticket-height: 35px;
+$icon-ticket-total-width: 263px;
+$icon-ticket-total-height: 257px;
+$icon-ticket-image: '/static/mobile/images/crystalcasino/sprites/menu-icons.png';
+$icon-ticket: (90px, 183px, -90px, -183px, 35px, 35px, 263px, 257px, '/static/mobile/images/crystalcasino/sprites/menu-icons.png', 'icon-ticket', );
+$icon-top-games-name: 'icon-top-games';
+$icon-top-games-x: 184px;
+$icon-top-games-y: 89px;
+$icon-top-games-offset-x: -184px;
+$icon-top-games-offset-y: -89px;
+$icon-top-games-width: 33px;
+$icon-top-games-height: 27px;
+$icon-top-games-total-width: 263px;
+$icon-top-games-total-height: 257px;
+$icon-top-games-image: '/static/mobile/images/crystalcasino/sprites/menu-icons.png';
+$icon-top-games: (184px, 89px, -184px, -89px, 33px, 27px, 263px, 257px, '/static/mobile/images/crystalcasino/sprites/menu-icons.png', 'icon-top-games', );
+$icon-tournament-name: 'icon-tournament';
+$icon-tournament-x: 228px;
+$icon-tournament-y: 134px;
+$icon-tournament-offset-x: -228px;
+$icon-tournament-offset-y: -134px;
+$icon-tournament-width: 30px;
+$icon-tournament-height: 36px;
+$icon-tournament-total-width: 263px;
+$icon-tournament-total-height: 257px;
+$icon-tournament-image: '/static/mobile/images/crystalcasino/sprites/menu-icons.png';
+$icon-tournament: (228px, 134px, -228px, -134px, 30px, 36px, 263px, 257px, '/static/mobile/images/crystalcasino/sprites/menu-icons.png', 'icon-tournament', );
+$icon-usa-name: 'icon-usa';
+$icon-usa-x: 46px;
+$icon-usa-y: 228px;
+$icon-usa-offset-x: -46px;
+$icon-usa-offset-y: -228px;
+$icon-usa-width: 34px;
+$icon-usa-height: 24px;
+$icon-usa-total-width: 263px;
+$icon-usa-total-height: 257px;
+$icon-usa-image: '/static/mobile/images/crystalcasino/sprites/menu-icons.png';
+$icon-usa: (46px, 228px, -46px, -228px, 34px, 24px, 263px, 257px, '/static/mobile/images/crystalcasino/sprites/menu-icons.png', 'icon-usa', );
+$icon-vip-club-name: 'icon-vip-club';
+$icon-vip-club-x: 95px;
+$icon-vip-club-y: 138px;
+$icon-vip-club-offset-x: -95px;
+$icon-vip-club-offset-y: -138px;
+$icon-vip-club-width: 36px;
+$icon-vip-club-height: 32px;
+$icon-vip-club-total-width: 263px;
+$icon-vip-club-total-height: 257px;
+$icon-vip-club-image: '/static/mobile/images/crystalcasino/sprites/menu-icons.png';
+$icon-vip-club: (95px, 138px, -95px, -138px, 36px, 32px, 263px, 257px, '/static/mobile/images/crystalcasino/sprites/menu-icons.png', 'icon-vip-club', );
+$icon-withdraw-name: 'icon-withdraw';
+$icon-withdraw-x: 135px;
+$icon-withdraw-y: 183px;
+$icon-withdraw-offset-x: -135px;
+$icon-withdraw-offset-y: -183px;
+$icon-withdraw-width: 36px;
+$icon-withdraw-height: 34px;
+$icon-withdraw-total-width: 263px;
+$icon-withdraw-total-height: 257px;
+$icon-withdraw-image: '/static/mobile/images/crystalcasino/sprites/menu-icons.png';
+$icon-withdraw: (135px, 183px, -135px, -183px, 36px, 34px, 263px, 257px, '/static/mobile/images/crystalcasino/sprites/menu-icons.png', 'icon-withdraw', );
+$icon-world-name: 'icon-world';
+$icon-world-x: 138px;
+$icon-world-y: 46px;
+$icon-world-offset-x: -138px;
+$icon-world-offset-y: -46px;
+$icon-world-width: 36px;
+$icon-world-height: 36px;
+$icon-world-total-width: 263px;
+$icon-world-total-height: 257px;
+$icon-world-image: '/static/mobile/images/crystalcasino/sprites/menu-icons.png';
+$icon-world: (138px, 46px, -138px, -46px, 36px, 36px, 263px, 257px, '/static/mobile/images/crystalcasino/sprites/menu-icons.png', 'icon-world', );
+$spritesheet-width: 263px;
+$spritesheet-height: 257px;
+$spritesheet-image: '/static/mobile/images/crystalcasino/sprites/menu-icons.png';
+$spritesheet-sprites: ($icon-action, $icon-activate-coupon, $icon-all-games, $icon-antifraud, $icon-cash, $icon-change-point, $icon-deposit, $icon-display, $icon-fair-game, $icon-faq, $icon-games, $icon-hands, $icon-history, $icon-info, $icon-lock, $icon-lottery, $icon-new-games, $icon-profile, $icon-promotion, $icon-protection, $icon-rules, $icon-russia, $icon-stop, $icon-super-lottery, $icon-ticket, $icon-top-games, $icon-tournament, $icon-usa, $icon-vip-club, $icon-withdraw, $icon-world, );
+$spritesheet: (263px, 257px, '/static/mobile/images/crystalcasino/sprites/menu-icons.png', $spritesheet-sprites, );
+
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of SCSS
+
+@include sprites($spritesheet-sprites);
+*/
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}

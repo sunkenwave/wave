@@ -1,0 +1,65 @@
+@import '../../base/components/nav';
+
+.menu {
+  box-shadow: inset -5px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  background: #141620;
+
+  &-button-wrap {
+    background: #21242F;
+    box-shadow: inset -5px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  }
+
+  &__icon--item {
+    background: url('/static/mobile/images/base/nav-arrow.png');
+  }
+
+  &__navigation-item--link {
+    background-image: linear-gradient(#181c2b, #202332);
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.75);
+    border-top: 1px solid #474959;
+  }
+
+  &__navigation-inner-item--link {
+    border-bottom: 1px solid #1b1d29;
+  }
+}
+
+.status-container {
+  background: #171a2a;
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, .4);
+
+  &__line {
+    background: #0d0f16;
+  }
+
+  &__line-progress--stat {
+    box-shadow: inset 1px 2px 1px 0px #fffa44, 0px 0px 5px #f17700;
+    background-image: linear-gradient(to bottom, #ffd23d, #f17700);
+  }
+  &__line-progress--point {
+    box-shadow: inset 1px 2px 1px 0px #0ff8ff, 0px 0px 5px #0a6ad6;
+    background-image: linear-gradient(to bottom, #0bb3ee, #0a6ad6);
+  }
+}
+
+.balance-container {
+  &__border {
+    border: 2px solid #457358;
+  }
+  &__name {
+    background: #141620;
+    color: #fff;
+  }
+
+  &__title {
+    color: #3dc754;
+  }
+  .dark-green {
+    color: #457358;
+  }
+  &.cashier-balance {
+    .balance-container__name {
+      background: #171a2a;
+    }
+  }
+}

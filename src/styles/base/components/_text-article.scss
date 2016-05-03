@@ -1,0 +1,94 @@
+.text-article {
+  p,
+  li,
+  a,
+  span,
+  strong,
+  em {
+    line-height: 1.4em;
+    font-weight: 700;
+    font-size: 0.8rem;
+    color: #fff;
+  }
+  h2, h3, h1, h4 {
+    color: $text-color-info;
+    margin: 1.05em 0 0.95em;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    line-height: 1.3em;
+    &:first-child {
+      margin: 0;
+    }
+  }
+  p {
+    margin: 0.7em 0;
+  }
+  .green_wysiwyg {
+    color: #56C0AA
+  }
+  .yellow_wysiwyg {
+    color: #FC0
+  }
+  .red_wysiwyg {
+    color: #EA222F
+  }
+  .white_wysiwyg {
+    color: #FFF
+  }
+  .gray1_wysiwyg {
+    color: #999
+  }
+  .gray2_wysiwyg {
+    color: #666
+  }
+  .gray3_wysiwyg {
+    color: #333
+  }
+  .black_wysiwyg {
+    color: #161616
+  }
+  .h2_wysiwyg,
+  .h3_wysiwyg {
+    color: #999;
+    font-size: 1em;
+    font-weight: 700;
+    line-height: 1.3em;
+  }
+  .h3_wysiwyg {
+    padding-bottom: 7px;
+    border-bottom: 1px solid;
+  }
+  ul {
+    display: block;
+    margin-bottom: 0.7em;
+    list-style-type: disc;
+    padding-left: 17px;
+  }
+  a {
+    color: $text-color-info;
+  }
+  strong,
+  b {
+    font-family: "Arial Black", Arial;
+  }
+  em {
+    font-style: italic;
+  }
+  table {
+    width:100%!important;
+    margin-bottom: 0.5rem;
+    td {
+      vertical-align: middle;
+    }
+    p,
+    strong {
+      font-size: 0.75em;
+      font-weight: 300;
+      line-height: 1em;
+    }
+    p {
+      margin: 0;
+    }
+  }
+}

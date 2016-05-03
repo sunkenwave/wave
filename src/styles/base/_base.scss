@@ -1,0 +1,139 @@
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.hidden {
+  display: none;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  &.translate {
+    .header__pay-container::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      background: #000;
+      opacity: 0.3;
+    }
+    .wrapper--trigger-menu {
+      display: block;
+    }
+    .menu {
+      transition: .38s transform;
+      transform: translateX(0);
+      position: absolute;
+    }
+    .header {
+      transform: translateX(85%);
+      &__menu-button {
+        left: -6px;
+      }
+    }
+    .container {
+      transform: translateX(85%);
+      position: fixed;
+      top: 0;
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+        background: #000;
+        opacity: 0.3;
+      }
+    }
+  }
+  &--trigger-menu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    z-index: 1000;
+  }
+}
+
+.container {
+  width: 100%;
+  padding-top: 55px;
+  //overflow-y:hidden;
+  position: relative;
+  transform: translateX(0);
+  transition: .4s transform;
+  will-change: transform;
+}
+
+.hr {
+  width: 100%;
+  position: relative;
+  margin: 20px auto;
+
+  &:before, &:after {
+    content: '';
+    width: 50%;
+    height: 30px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+
+  &:before {
+    top: -31px;
+  }
+
+  &:after {
+    bottom: -30px;
+  }
+}
+
+.blue-section {
+  position: relative;
+  border-radius: 10px;
+  top: 10px;
+  margin: 0 10px 10px;
+  padding: 10px;
+
+  &--two-blocks {
+    lost-utility: clearfix;
+    margin: 10px;
+    .blue-section {
+      lost-column: 1/2 2 10px;
+      margin: 0;
+      padding: 10px;
+    }
+  }
+}
+
+.clearfix {
+  lost-utility: clearfix;
+}
+
+table {
+  border-collapse: collapse;
+  min-width: 100%;
+  th,
+  td {
+    padding: 8px 10px 6px;
+    font-weight: 700;
+  }
+  .blue {
+    text-align: center;
+  }
+}
+
+.route-transition-group {
+  padding-bottom: 10px;
+}

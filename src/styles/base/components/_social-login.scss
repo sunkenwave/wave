@@ -1,0 +1,84 @@
+.registration {
+  text-align: center;
+  .btn {
+    margin-top: 10px;
+    font-size: 1.4em;
+    height: 60px;
+  }
+  .default-url {
+    margin: 10px 0;
+    display: inline-block;
+    font-size: 1.3em;
+    font-weight: bold;
+    &--remember {
+      font-size: 1em;
+      display: inline-block;
+      min-width: 160px;
+      margin: 10px 0 5px;
+    }
+  }
+  &--form-box {
+    margin: 13px 0;
+    position: relative;
+  }
+  &--social {
+    p {
+      font-weight: 700;
+    }
+    &-buttons {
+      text-align: center;
+      padding: 13px 0;
+      clear: both;
+      &::after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      a {
+        lost-column: 1/7 7 3%;
+        display: inline-block;
+        background-size: contain !important;
+        background-repeat: no-repeat !important;
+        min-height: 40px;
+      }
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.gray-msg {
+  color: $text-color-dark;
+  &-margin {
+    margin: 10px 0;
+    display: inline-block;
+  }
+  span,
+  a {
+    color: $text-color-dark;
+  }
+  a {
+    position: relative;
+    top: 1px;
+    left: 5px;
+  }
+}
+
+.multiply-inputs {
+  margin: 13px 0;
+  position: relative;
+  .gray-msg {
+    display: inline-block;
+  }
+  &-title {
+    position: relative;
+    top: -9px;
+    padding: 0 10px;
+  }
+  .input-text {
+    width: 41%;
+    display: inline-block;
+    margin: 6px 6px 10px;
+  }
+}

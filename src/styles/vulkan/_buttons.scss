@@ -1,0 +1,18 @@
+@import '../base/buttons';
+
+.btn {
+  border-radius: 5px;
+
+  &--primary {
+    background: linear-gradient(to top, #114928, #298c2f 51%, #3a9e40 51%, #80db4f 99%, #daffba 99%);
+  }
+  &--danger {
+    background: linear-gradient(to bottom, #ec8a68, #fc6b4e 2%, #e74e4a 2%, #d0585b 50%, #cc0920 50%, #770306);
+  }
+  &--default {
+    background: linear-gradient(to bottom, #7fb1ec 2%, #6695cd 2%, #4271ba 50%, #3763a8 50%, #02297e);
+  }
+  &--system {
+    background: linear-gradient(to bottom, #7fb1ec 2%, #eaebf4 2%, #75767f 50%, #62636c 50%, #33343d);
+  }
+}

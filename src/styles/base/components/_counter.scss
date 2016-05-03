@@ -1,0 +1,36 @@
+.counter {
+  div {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  &--dots {
+    margin: 0 3px;
+  }
+  &-box {
+    padding: 20px 0;
+  }
+  &--number {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  &--box {
+    width: 34px;
+    height: 48px;
+    margin: 0 1px;
+    position: relative;
+  }
+  &--time-box {
+    margin: 3px 0 3px;
+    div {
+      display: inline-block;
+      width: 69px;
+    }
+    &--hours {
+      margin: 0 14px;
+    }
+  }
+
+}

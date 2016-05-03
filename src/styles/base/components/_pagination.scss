@@ -1,0 +1,46 @@
+.pagination {
+  text-align: center;
+  margin: 0 auto;
+  width: 280px;
+  position: relative;
+  &__prev-btn {
+    display: inline-block;
+    vertical-align: top;
+    background: url("/static/mobile/images/base/pagination-arrow.png") 10px 9px no-repeat;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 0;
+    top: 13px;
+  }
+  &__next-btn {
+    display: inline-block;
+    vertical-align: top;
+    background: url("/static/mobile/images/base/pagination-arrow.png") 10px 9px no-repeat;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 0;
+    top: 13px;
+    -ms-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  &__count {
+    display: inline-block;
+    a {
+      display: inline-block;
+      border-radius: 50%;
+      color: #94969f;
+      text-decoration: none;
+      font-size: 19px;
+      margin: 8px 2px;
+      padding: 9px 13.2px;
+      font-weight: bold;
+      &.active {
+        border: 2px solid #e3bc3a;
+        color: #e3bc3a;
+      }
+    }
+  }
+}

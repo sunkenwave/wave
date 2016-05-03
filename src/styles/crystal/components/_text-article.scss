@@ -1,0 +1,35 @@
+@import '../../base/components/text-article';
+
+.text-article {
+  h2, h3, h1, h4 {
+    color: $white-color;
+  }
+  p {
+    &.date {
+      color: #7c7e88;
+    }
+  }
+  table {
+    tr{
+      td:first-child{
+        text-align: left;
+      }
+    }
+    td{
+      font-size: .75em;
+      text-align: center;
+      p{
+        font-weight: 700;
+        font-size: 1em;
+      }
+    }
+    tr:first-child {
+      td {
+        background: #333333;
+        strong {
+          color: $white-color;
+        }
+      }
+    }
+  }
+}

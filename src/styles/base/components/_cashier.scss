@@ -1,0 +1,174 @@
+.cashier-table {
+  margin: -10px;
+  padding-bottom: 30px;
+  .input-text {
+    width: calc(100% - 20px);
+    margin-left: 10px;
+    position: relative;
+    z-index: 2;
+  }
+  &--body{
+    max-width: 700px;
+    margin: auto;
+  }
+  &--head {
+    display: flex;
+    height: 44px;
+    border-radius: 10px 10px 0 0;
+    padding: 10px;
+    max-width: 700px;
+    margin: auto;
+    .group {
+      width: 64%;
+      display: flex;
+      div {
+        &:first-child {
+          margin: auto 0;
+          width: calc(45% + 28px);
+          color: $text-color-dark;
+        }
+        &:nth-child(2) {
+          color: $text-color-info;
+          margin: auto;
+        }
+      }
+    }
+    & > div {
+      margin: auto;
+      font-weight: 700;
+      &:nth-child(2) {
+        margin: auto 0 auto 7%;
+        width: 29%;
+        color: $yellow;
+      }
+    }
+  }
+  &--checker {
+    display: flex;
+    margin: auto 0;
+    width: 64%;
+  }
+  &--row {
+    position: relative;
+    display: flex;
+    height: 50px;
+    font-size: 0.9em;
+    font-weight: 700;
+    padding: 0 10px;
+    &.big {
+      margin-top: 7px;
+      .cashier-table--sum,
+      .cashier-table--checker {
+        width: 85%;
+      }
+      .cashier-table--border{
+        height: 102px;
+        opacity: 0;
+      }
+    }
+    &:first-child {
+      .cashier-table--bonus {
+        border-radius: 7px 7px 0 0;
+      }
+    }
+    .radio-checker {
+      margin: auto 0;
+      position: relative;
+      top: -1px;
+    }
+  }
+  &--border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+  }
+  &--sum {
+    margin: auto 0 auto 4px;
+    width: 45%;
+  }
+  &--bonus {
+    margin: auto;
+    height: 100%;
+    line-height: 49px;
+    width: 33%;
+    text-align: center;
+    color: $text-color-info;
+    position: relative;
+    z-index: 1;
+    &-absolute {
+      top: 50px;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      background: url("/static/mobile/images/base/triangle.png") no-repeat;
+      background-size: contain;
+    }
+  }
+  &--equality {
+    margin: auto 0;
+    width: 7%;
+  }
+  &--output-sum {
+    width: 29%;
+    margin: auto 0;
+    color: $yellow;
+  }
+}
+
+.hidden-radio-input:checked {
+  & ~ .cashier-table--border {
+    border-radius: 8px;
+  }
+}
+
+.cashier-method {
+  text-align: center;
+  lost-utility: clearfix;
+  .cashier-method--box {
+    lost-column: 1/2 2 5%;
+    margin-bottom: 5%;
+  }
+  &--box {
+    display: flex;
+    border-radius: 7px;
+    height: 75px;
+    &.single {
+      width: 100% !important;
+    }
+    img {
+      margin: auto;
+      max-height: 53px;
+      max-width: 98px;
+    }
+  }
+}
+
+.cashier-conclusion {
+  text-align: center;
+
+  .btn {
+    width: 100%;
+    display: block;
+    margin: 20px auto 10px;
+  }
+  &--url {
+    font-size: 1.1em;
+    margin: 20px 0;
+    display: inline-block;
+  }
+}
+
+.cashier-payment {
+  text-align: center;
+  .checkbox {
+    padding-top: 0;
+  }
+  .cashier-conclusion--url {
+    margin-bottom: 10px;
+  }
+}
+

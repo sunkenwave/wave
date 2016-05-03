@@ -1,0 +1,20 @@
+@import '../../base/components/text-article';
+
+.text-article {
+  p {
+    &.date {
+      color: #7c7e88;
+    }
+  }
+  table {
+    tr:first-child {
+      td {
+        background: #111e31;
+        p,
+        strong {
+          color: #94969f;
+        }
+      }
+    }
+  }
+}

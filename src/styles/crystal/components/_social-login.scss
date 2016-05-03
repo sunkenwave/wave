@@ -1,0 +1,14 @@
+@import '../../base/components/social-login';
+
+.registration {
+  .default-url {
+    color: #5dc3b0;
+  }
+}
+
+.multiply-inputs {
+  border: 1px solid #2d3044;
+  &-title {
+    background: #171a2a;
+  }
+}

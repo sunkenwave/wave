@@ -1,0 +1,94 @@
+.icon {
+  &--email {
+    background: url("/static/mobile/images/base/footer-letter.png") no-repeat;
+    width: 33px;
+    height: 25px;
+    display: inline-block;
+    position: relative;
+    top: 8px;
+    left: -11px;
+  }
+  &--phone {
+    background: url("/static/mobile/images/base/footer-phone.png") no-repeat;
+    width: 33px;
+    height: 25px;
+    display: inline-block;
+    position: relative;
+    top: 8px;
+    left: -9px;
+  }
+  &--support {
+    display: inline-block;
+    background: url("/static/mobile/images/base/support-logo.png") no-repeat;
+    width: 53px;
+    height: 42px;
+    background-size: contain;
+  }
+  &--404 {
+    display: inline-block;
+    background: url("/static/mobile/images/base/404.png") no-repeat;
+    width: 260px;
+    height: 119px;
+    background-size: contain;
+  }
+  &--success {
+    display: inline-block;
+    background: url("/static/mobile/images/base/success-circle.png") no-repeat;
+    width: 140px;
+    height: 119px;
+    background-size: contain;
+  }
+  &--error {
+    display: inline-block;
+    background: url("/static/mobile/images/base/error-circle.png") no-repeat;
+    width: 140px;
+    height: 119px;
+    background-size: contain;
+  }
+  &--offline {
+    display: inline-block;
+    background: url("/static/mobile/images/base/logo-second.png") no-repeat;
+    width: 230px;
+    height: 169px;
+    background-size: contain;
+  }
+  &--diagram,
+  &--circles {
+    position: absolute;
+    display: inline-block;
+    background: url("/static/mobile/images/base/diagram.png") no-repeat;
+    width: 30px;
+    height: 30px;
+    background-size: contain;
+    bottom: 0px;
+    right: 6px;
+  }
+  &--circles {
+    background: url("/static/mobile/images/base/circles.png") no-repeat;
+    background-size: contain;
+  }
+  &--notification {
+    background: url("/static/mobile/images/base/notification.png") no-repeat;
+    background-size: contain;
+    display: inline-block;
+    position: fixed;
+    right: 82%;
+    top: 17px;
+    width: 30px;
+    height: 30px;
+  }
+  &--accept,
+  &--delete {
+    background: url("/static/mobile/images/base/close.png") no-repeat;
+    background-size: contain;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    position: relative;
+    top: 21px;
+  }
+  &--delete {
+    background: url("/static/mobile/images/base/delete.png") no-repeat;
+    background-size: contain;
+  }
+}

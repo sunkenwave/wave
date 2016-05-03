@@ -1,0 +1,38 @@
+.games-section {
+  padding: 10px 5%;
+  text-align: center;
+
+  &__body {
+    lost-utility: clearfix;
+  }
+
+  &__heading {
+    width: 100%;
+    padding-bottom: 15px;
+    text-align: left;
+  }
+
+  &__title {
+    display: inline-block;
+    font-size: 1em;
+    font-weight: bold;
+  }
+
+  &__show-all {
+    display: inline-block;
+    float: right;
+    color: $text-color-dark;
+    font-size: .9em;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 3px;
+  }
+
+  &__show-all--count {
+    color: $text-color-action;
+  }
+
+  &-without-name-section {
+    padding: 0;
+  }
+}

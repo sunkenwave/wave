@@ -1,0 +1,94 @@
+.top-players{
+    font-size: .9em;
+  .sort-title {
+    lost-utility: clearfix;
+    padding: 25px 0;
+    li{
+      float: left;
+      font-weight: bold;
+      color: #999;
+      text-align: center;
+      &:first-child{
+        width: 30%;
+      }
+      &:nth-child(2){
+        width: 46%;
+      }
+      &:last-child{
+        width: 24%;
+      }
+      span {
+        display:inline-block;
+      }
+      img{
+        padding-left: 7px;
+        position:relative;
+        top:1px;
+      }
+    }
+  }
+table th, table td{
+  text-align: center;
+  padding: 8px 0 6px;
+}
+  .rating-table-wrap{
+    .sort-by-win{
+      &.active{
+        background: url(/img/sort-arrow.png) 94% -27px no-repeat;
+        color:$text-color-default;
+      }
+    }
+  }
+  .col-1{
+    color:$text-color-info;
+    width:15%;
+    text-align: center;
+  }
+  .col-2{
+    width:22%;
+  }
+  .col-3{
+    color:$yellow;
+    width:40%;
+  }
+  .col-4{
+    width:23%;
+    &.up{
+      color:$green-color;
+    }
+    &.down{
+      color:$red-color;
+    }
+  }
+  .sub-title{
+    text-align: center;
+    font-weight: bold;
+    line-height: 60px;
+    font-size: 1.25em;
+  }
+  .my-position{
+    table{
+      background: transparent;
+      border: none;
+      th{
+        height:0;
+        border: none;
+        color: transparent;
+        background: transparent;
+      }
+      td{
+        border: none;
+        background:transparent;
+        border: 1px solid transparent;
+      }
+    }
+    min-width: 100%;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid #3dff78;
+    border-radius: 5px;
+    box-shadow: inset 1px 1px 19px 10px rgba(61,255,120,.3),
+                      1px 1px 13px 5px rgba(61,255,120,.7);
+    padding: 10px 0;
+  }
+}

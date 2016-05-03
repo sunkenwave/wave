@@ -1,0 +1,33 @@
+@import '../base/input&select';
+
+.input-text,
+textarea {
+  background: $app-bg;
+  border: 2px solid #4a4a4a;
+  border-radius: 5px;
+
+
+  &.error {
+    border: 2px solid #eb212e;
+    box-shadow: none;
+  }
+  &:focus {
+    border-color: #5382c3;
+    background: #141620;
+    box-shadow: inset 0px 0px 10px 5px rgba(0,0,0,.25);
+  }
+}
+
+.error-msg {
+  font-weight: bold;
+  color: #eb212e;
+}
+
+.icon--checkbox {
+  background: url("/static/mobile/images/crystalcasino/checkbox2.png") no-repeat;
+}
+
+.radio-checker {
+  background: #141620;
+  box-shadow: inset 0px 0px 4px 4px rgba(0,0,0,.25);
+}

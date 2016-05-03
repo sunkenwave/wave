@@ -1,0 +1,88 @@
+.blue-section.default-subscription {
+  text-align: center;
+  position: relative;
+  left: 0;
+  width: calc(100% - 20px);
+  overflow-y: hidden;
+  div {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    width: calc(100% - 20px);
+  }
+  p {
+    padding: 25px 0 10px;
+    width: 250px;
+    margin: 0 auto;
+  }
+  .default-container__title {
+    &.white {
+      color: $white-color;
+    }
+    &.red {
+      color: $red-color;
+    }
+    &.green {
+      color: $green-color;
+    }
+  }
+  &.section {
+    &-offline {
+      top: -45px;
+    }
+    &-404 {
+      a {
+        margin-top: 10px;
+        display: inline-block;
+        font-size: 1.4em;
+        font-weight: bold;
+      }
+      p {
+        line-height: 1.2em;
+      }
+    }
+    &-success {
+      a {
+        margin: 10px 0 20px;
+        display: inline-block;
+        width: 80px;
+      }
+      p {
+        padding: 15px 0 10px;
+        line-height: 1.1em;
+      }
+    }
+    &-error {
+      p {
+        padding: 15px 0 30px;
+        width: 270px;
+        margin: 0 auto;
+        line-height: 1.1em;
+      }
+    }
+    &-offline {
+      p {
+        width: 100%;
+        font-size: 1.2em;
+        line-height: 1.3em;
+        padding: 7px 6px 0 6px;
+        margin-bottom: 23px;
+      }
+    }
+    &-rememberPass {
+      p {
+        padding: 15px 0 25px;
+        width: 100%;
+        font-size: 1.2em;
+        line-height: 1.4em;
+      }
+      a {
+        margin-bottom: 25px;
+      }
+    }
+  }
+}
+

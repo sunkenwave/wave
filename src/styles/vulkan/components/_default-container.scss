@@ -1,0 +1,32 @@
+@import '../../base/components/default-container';
+
+.default-container {
+  &--game {
+    background-image: linear-gradient(to top, #15456d, #073459 3%, #052442 45%);
+  }
+  &--game-new {
+    background-image: linear-gradient(to top, #15456d, #073459 3%, #052442 45%);
+  }
+  &--share {
+    background-image: linear-gradient(to top, #15456d, #073459 3%, #052442 45%);
+  }
+  &--event {
+    background-image: linear-gradient(to top, #15456d, #073459 3%, #052442 45%);
+  }
+  &--vip {
+    box-shadow: 0 2px 9px 3px rgba(0, 0, 0, .5);
+    .default-container__description {
+      .default-container__title {
+        color: $yellow;
+      }
+    }
+  }
+  &__cover {
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.75);
+  }
+  &__title {
+    &--yellow {
+      color: $yellow;
+    }
+  }
+}

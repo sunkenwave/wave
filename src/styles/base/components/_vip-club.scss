@@ -1,0 +1,196 @@
+.vip-member{
+  .blue-section{
+    &:first-child{
+      padding-bottom: 50px;
+    }
+    &:nth-child(3n){
+      padding-top: 20px;
+      top:-15px;
+    }
+  }
+  .games-section__body{
+    position:relative;
+    padding:10px 20px 20px;
+    background:#10121a;
+    margin-top: -25px;
+    box-shadow: inset 1px 1px 8px 6px rgba(0,0,0,.3);
+    z-index: 1;
+    &:before{
+      position: absolute;
+      left: 50%;
+      margin-left: -15px;
+      top: -30px;
+      border: 15px solid transparent;
+      border-bottom: 15px solid #0C0E17;
+    }
+    .default-container--game{
+      background-image: -webkit-linear-gradient(bottom, #b65712, #a85102 10%, #c57e10 45%);
+      background-image: linear-gradient(to top, #b65712, #a85102 10%, #c57e10 45%);
+      z-index: 1;
+      &:nth-child(5n-1){
+        margin-left: 17%;
+      }
+      &:before{
+        content: "";
+        width: 50%;
+        height: 50%;
+        background: url(/static/mobile/images/base/vip-game.png) no-repeat;
+        background-size: contain;
+        position: absolute;
+        left: -5px;
+        top: -5px;
+      }
+    }
+  }
+}
+.title-vip{
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+  padding: 0 5%;
+  position: relative;
+  line-height: 1.2;
+  color: $text-color-default;
+}
+.txt{
+  &-top{
+    font-weight: bold;
+    padding: 15px 0;
+    line-height: 1.25;
+  }
+  &.center{
+    text-align: center;
+  }
+}
+.mar-top{
+  margin-top: 28px;
+}
+.pos-top{
+    top:-30px;
+}
+.red{
+color:$red-color;
+}
+.vip-logo img{
+  max-width: 100%;
+}
+.default-container__img {
+  .black-bg{
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,.8);
+    position:absolute;
+    text-align: center;
+    border-radius: 9px;
+    top:0;
+    .content-center{
+      position:absolute;
+      width:100%;
+      top:50%;
+      left:50%;
+      transform:translate(-50%, -50%);
+      color: $text-color-info;
+      font-weight: bold;
+      font-size: 1.5em;
+      h4{
+        color: #94969f;
+        font-size: .8em;
+        margin-bottom: 10px;
+      }
+      .position{
+        display:inline-block;
+        margin-left: 2px;
+        color: $text-color-default;
+        border-radius: 3px;
+        min-width: 28px;
+        min-height: 45px;
+        background:url(/static/mobile/images/base/counter.png) no-repeat rgba(255,255,255,.3);
+        &:nth-child(4),
+        &:nth-child(7){
+          background: none;
+          padding: .2em .1em;
+          min-width: 0px;
+          width:auto;
+          vertical-align: top;
+        }
+        &.pos-0{
+          background-position: -4px -5px;
+        }
+        &.pos-1{
+          background-position: -3px -57px;
+        }
+        &.pos-2{
+          background-position: -4px -111px;
+        }
+        &.pos-3{
+          background-position: -3px -162px;
+        }
+        &.pos-4{
+          background-position: -4px -214px;
+        }
+        &.pos-5{
+          background-position: -4px -267px;
+        }
+        &.pos-6{
+          background-position: -3px -321px;
+        }
+        &.pos-7{
+          background-position: -4px -381px;
+        }
+        &.pos-8{
+          background-position: -2px -437px;
+        }
+        &.pos-9{
+          background-position: -3px -494px;
+        }
+      }
+      .txt-clock{
+        color:$text-color-dark;
+        font-size: .6em;
+        li{
+          display:inline-block;
+          &:first-child{
+            width:90px;
+          }
+          &:nth-child(2){
+            width:92px;
+          }
+          &:last-child{
+            width:59px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.deposit-container{
+  &__border{
+    position: relative;
+    border: 2px solid #2c2f43;
+    padding: 0 5% 15px;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 28px;
+  }
+  &__name{
+    padding: 5px 10px 0;
+    background: #171a2a;
+    color: #fff;
+    font-weight: bold;
+    display: inline-block;
+    position: relative;
+    top: -14px;
+  }
+  &__title{
+    padding: 0 5% 2px;
+    font: 1.6em 'arial black';
+    text-align: center;
+    color: #038fde;
+    position: relative;
+    font-weight: bold;
+    &.yellow{
+      color:$yellow;
+    }
+  }
+}

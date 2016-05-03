@@ -1,0 +1,64 @@
+@import '../../base/components/nav';
+
+.menu {
+  box-shadow: inset -5px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  background: $back-layout;
+
+  &-button-wrap {
+    background: #21242F;
+    box-shadow: inset -5px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  }
+
+  &__icon--item {
+    background: url('/static/mobile/images/base/nav-arrow.png');
+  }
+
+  &__navigation-item--link {
+    background-image: linear-gradient(#292929, #212121);
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.75);
+    border-top: 1px solid #474959;
+  }
+
+  &__navigation-inner-item--link {
+    background: #161616;
+    border-bottom: 1px solid #1b1d29;
+  }
+}
+
+.status-container {
+  background: $app-bg;
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, .4);
+
+  &__line {
+    background: $back-layout;
+  }
+
+  &__line-progress--stat {
+    background: #5dc3b0;
+  }
+  &__line-progress--point {
+    background: #ffcc00;
+  }
+}
+
+.balance-container {
+  &__border {
+    border: 2px solid #5dc3b0;
+  }
+  &__name {
+    background: #141620;
+    color: #fff;
+  }
+
+  &__title {
+    color: #5dc3b0;
+  }
+  .dark-green {
+    color: $yellow;
+  }
+  &.cashier-balance {
+    .balance-container__name {
+      background: $back-layout;
+    }
+  }
+}

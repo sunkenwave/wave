@@ -1,0 +1,26 @@
+@import '../base/buttons';
+
+.btn {
+  border-radius: none;
+  text-transform: lowercase;
+  box-shadow: 0 1px 1px rgba(0,0,0,.75), inset 0 1px rgba(132,205,195,.34);
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
+
+  &--primary {
+    background-color: #5dc3b0;
+    background-image: linear-gradient(to bottom, rgba(97,194,175,.34), rgba(60,167,141,.34), rgba(97,194,175,.34) 50%, rgba(60,167,141,.34) 50%, rgba(97,194,175,.34), rgba(60,167,141,.34));
+  }
+  &--danger {
+    background: linear-gradient(to bottom, #ec8a68, #fc6b4e 2%, #e74e4a 2%, #d0585b 50%, #cc0920 50%, #770306);
+  }
+  &--default {
+    background-color: #eb212e;
+    background-image: linear-gradient(to top, rgba(235,33,46,.34), rgba(255,74,26,.34), rgba(235,33,46,.34) 50%, rgba(255,74,26,.34) 50%, rgba(235,33,46,.34), rgba(255,74,26,.34));
+  }
+  &--system {
+    background-image: linear-gradient(to top, #333333 49%, #3d3d3d 50%);
+  }
+}

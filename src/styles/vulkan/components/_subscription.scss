@@ -1,0 +1,12 @@
+@import '../../base/components/subscription';
+
+.blue-section.default-subscription {
+  &.section {
+    &-404 {
+      a {
+        color: #0395e7;
+      }
+    }
+  }
+}
+

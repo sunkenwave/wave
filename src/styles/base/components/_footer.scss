@@ -1,0 +1,35 @@
+.footer {
+  padding: 10px 5%;
+
+  .btn {
+    width: 90%;
+    margin: auto;
+  }
+}
+
+.footer__payments {
+  display: block;
+  max-width: 100%;
+  margin: auto;
+}
+
+.footer__contact-link {
+  display: block;
+  margin: 5% auto;
+  color: $text-color-support;
+  text-decoration: none;
+  text-align: center;
+  font-size: 1.1em;
+}
+
+.footer__description {
+  color: $text-color-footer;
+  text-align: center;
+  padding: 5px 0 3%;
+  line-height: 1.3em;
+  font-size: 0.9em;
+}
+
+.footer__description--link {
+  color: $text-color-footer-link;
+}

@@ -1,0 +1,48 @@
+@import '../../base/components/counter';
+
+.counter {
+  &--number {
+    background: url("/static/mobile/images/base/counter.png");
+    &.count {
+      &-1 {
+        background-position: 1px -55px;
+      }
+      &-2 {
+        background-position: -1px -109px;
+      }
+      &-3 {
+        background-position: 0px -160px;
+      }
+      &-4 {
+        background-position: 0px -212px;
+      }
+      &-5 {
+        background-position: 0px -266px;
+      }
+      &-6 {
+        background-position: 0px -320px;
+      }
+      &-7 {
+        background-position: 0px -380px;
+      }
+      &-8 {
+        background-position: 1px -436px;
+      }
+      &-9 {
+        background-position: 0px -493px;
+      }
+      &-0 {
+        background-position: 0px -3px;
+      }
+    }
+  }
+  &--box {
+    background: #454855;
+  }
+  &--time-box {
+    div {
+      color: #94969f;
+    }
+  }
+
+}

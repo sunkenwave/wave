@@ -1,0 +1,13 @@
+@import '../../base/components/tournaments';
+
+.win-tournament {
+  .place-1 {
+    color: $yellow;
+  }
+  .place-2 {
+    color: #a5a5a5;
+  }
+  .place-3 {
+    color: #c4844e;
+  }
+}
