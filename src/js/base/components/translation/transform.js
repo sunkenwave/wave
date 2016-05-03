@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 
-const project = window.data.project.slice(0, -6);
-const i18next = require(`../../../${project}/containers/i18n.js`).default;
+const i18next = require('../../../crystal/containers/i18n.js').default;
 
 export const translate = ComposedComponent => class extends Component {
   constructor(props) {

@@ -1,3 +1,5 @@
+//npm i -g gulp
+
 var gulp = require('gulp');
 var fs = require('fs');
 var path = require('path');
@@ -18,15 +20,15 @@ var po2json = require('po2json');
 var mkdirp = require('mkdirp');
 var scanner = require('i18next-scanner');
 var json2po = require('i18next-conv');
+var connect = require('gulp-connect');
 
 /*
   ** Environment **
-  Development: gulp --env=nameCasino
-  Production:  gulp --env=nameCasino --prod
+  Development: gulp
+  Production:  gulp --env=prod
 */
 
-var _CASINO = gutil.env.env;
-var prod = gutil.env.prod;
+var prod = gutil.env.env;
 
 gulp.task('po2json', function() {
   var pathDirCasino = './localization-po/' + _CASINO + 'casino';
@@ -41,21 +43,21 @@ gulp.task('po2json', function() {
 
   updatelistDirs.forEach(function(obj) {
     var jsonData = po2json.parseFileSync(obj.dir, { format: 'mf'});
-    var pathLanguage = './../../static/mobile/localization/' + _CASINO + 'casino';
+    var pathLanguage = './localization';
     mkdirp(pathLanguage, function (err) {
-      fs.writeFile('./../../static/mobile/localization/' + _CASINO + 'casino/' + obj.item + '.json', JSON.stringify(jsonData));
+      fs.writeFile('./localization/' + obj.item + '.json', JSON.stringify(jsonData));
     });
   });
 });
 
 gulp.task('js2json', function() {
-  var pathDirCasino = '../locale/' + _CASINO + 'casino';
+  var pathDirCasino = './localization';
 
   var listDirs = fs.readdirSync(pathDirCasino).filter(function(dir) {
     return  fs.statSync(path.join(pathDirCasino, dir)).isDirectory();
   });
 
-  return gulp.src(['src/**/*.js'])
+  return gulp.src(['./src/**/*.js'])
     .pipe(scanner({
       func: {
         list: ['__']
@@ -66,15 +68,15 @@ gulp.task('js2json', function() {
       nsSeparator: '.,,.....',
       keySeparator: '.,,.....',
       resource: {
-        loadPath: './localization/' + _CASINO + 'casino/{{lng}}.json',
-        savePath: './localization/' + _CASINO + 'casino/{{lng}}.json'
+        loadPath: './localization/{{lng}}.json',
+        savePath: './localization/{{lng}}.json'
       }
     }))
     .pipe(gulp.dest('./'));
 });
 
 gulp.task('json2po', function() {
-  var pathDirCasino = '../locale/' + _CASINO + 'casino';
+  var pathDirCasino = './localization';
 
   var listDirs = fs.readdirSync(pathDirCasino).filter(function(dir) {
     return  fs.statSync(path.join(pathDirCasino, dir)).isDirectory();
@@ -90,7 +92,7 @@ gulp.task('json2po', function() {
 });
 
 gulp.task('sprite', function () {
-  var pathDir = 'src/assets/images/' + _CASINO + 'casino' + '/sprites';
+  var pathDir = 'src/assets/images/sprites';
 
   var listDirs = fs.readdirSync(pathDir).filter(function(dir) {
     return  fs.statSync(path.join(pathDir, dir)).isDirectory();
@@ -99,7 +101,7 @@ gulp.task('sprite', function () {
 
   var updatelistDirs = listDirs.map(function(item) {
     return {
-      path: 'src/assets/images/' + _CASINO + 'casino' + '/sprites/' + item + '/*.png',
+      path: 'src/assets/images/sprites/' + item + '/*.png',
       name: item
     }
   })
@@ -108,17 +110,17 @@ gulp.task('sprite', function () {
     var spriteData = gulp.src(dir.path)
       .pipe(spritesmith({
         imgName: dir.name + '.png',
-        imgPath: '/static/mobile/images/' + _CASINO + 'casino' + '/sprites/' + dir.name + '.png',
+        imgPath: './build/mobile/images/sprites/' + dir.name + '.png',
         cssName: '_' + dir.name + '.scss',
         padding: 10
       }));
 
     var imgStream = spriteData.img
       .pipe(buffer())
-      .pipe(gulp.dest('src/assets/images/' + _CASINO + 'casino' + '/sprites'));
+      .pipe(gulp.dest('src/assets/images/sprites'));
 
     var cssStream = spriteData.css
-      .pipe(gulp.dest('src/styles/' + _CASINO + ''));
+      .pipe(gulp.dest('src/styles'));
 
     return merge(imgStream, cssStream);
   })
@@ -127,29 +129,41 @@ gulp.task('sprite', function () {
 gulp.task('images', ['sprite'], function() {
   gulp.src('src/assets/images/**/*.*')
     .pipe(!prod ? gutil.noop() : imagemin())
-    .pipe(gulp.dest('../../static/mobile/images'))
+    .pipe(gulp.dest('./build/mobile/images'))
 });
 
 gulp.task('fonts', function() {
   gulp.src('src/assets/fonts/**/*.*')
-    .pipe(gulp.dest('../../static/mobile/fonts'))
+    .pipe(gulp.dest('./build/mobile/fonts'))
+});
+
+gulp.task('html', function() {
+  gulp.src('pages/index.html')
+      .pipe(gulp.dest('./build/mobile'))
+});
+
+gulp.task('webserver', function() {
+  connect.server({
+    livereload: true,
+    root: ['./build/mobile/']
+  });
 });
 
 gulp.task('sass', function() {
-  gulp.src('src/styles/' + _CASINO + '/*.scss')
+  gulp.src('src/styles/crystal/main.scss')
     .pipe(!prod ? sourcemaps.init() : gutil.noop())
     .pipe(sass().on('error', sass.logError))
-    .pipe(postcss([lost(), autoprefixer()]))
+    .pipe(postcss([autoprefixer()]))
     .pipe(!prod ? sourcemaps.write() : gutil.noop())
     .pipe(prod ? minifyCss() : gutil.noop())
-    .pipe(gulp.dest('../../static/mobile/css/' + _CASINO));
+    .pipe(gulp.dest('build/mobile/css'));
 });
 
 gulp.task('webpack', function(callback) {
   var entryWebpack = [
     'webpack-dev-server/client?http://localhost:4000',
     'webpack/hot/only-dev-server',
-    path.join(__dirname, 'src', 'js', _CASINO)
+    path.join(__dirname, 'src', 'js', 'crystal')
   ];
 
   var plugins = [
@@ -165,16 +179,16 @@ gulp.task('webpack', function(callback) {
       }
     }))
 
-    entryWebpack = [ path.join(__dirname, 'src', 'js', _CASINO) ];
+    entryWebpack = [ path.join(__dirname, 'src', 'js', 'crystal') ];
   }
   var compiler = webpack({
     entry: entryWebpack,
 
 
     output: {
-      path: path.join(__dirname, '../../static/mobile/js', _CASINO),
+      path: path.join(__dirname, './build/mobile/js'),
       filename: 'main.js',
-      publicPath: '/static/'
+      publicPath: '/build/'
     },
 
     devtool: !prod ? "cheap-inline-module-source-map" : null,
@@ -215,7 +229,7 @@ gulp.task('webpack', function(callback) {
     return compiler;
   } else {
     var server = new WebpackDevServer(compiler, {
-      publicPath: '/static/',
+      publicPath: '/build/',
       hot: true,
       historyApiFallback: true,
       stats: { colors: true },
@@ -234,7 +248,7 @@ gulp.task('watch', function() {
   gulp.watch('src/assets/img/**/*.*', ['images']);
 });
 
-var tasks = ['webpack', 'images', 'fonts', 'sass'];
+var tasks = ['html', 'webserver', 'webpack', 'images', 'fonts', 'sass'];
 
 !prod && tasks.push('watch');
 

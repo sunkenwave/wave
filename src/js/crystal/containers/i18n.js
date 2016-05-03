@@ -1,6 +1,6 @@
 import i18next from 'i18next';
-import i18nCrystalRu from '../../../../localization/crystalcasino/ru.json';
-import i18nCrystalEn from '../../../../localization/crystalcasino/en.json';
+import i18nCrystalRu from '../../../../localization/ru.json';
+import i18nCrystalEn from '../../../../localization/en.json';
 
 const lang = window.data.lang;
 

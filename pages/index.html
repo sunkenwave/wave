@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="{{lang|lower}}">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+    <meta name="viewport" content="width=device-width, height=device-height,  initial-scale=1.0, user-scalable=no, user-scalable=0"/>
+    <title>My wave</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+<div id="root"></div>
+<script>
+    var data = {
+        global:{
+            _xsrf: '{{_xsrf}}',
+            streamSSIDURL: '{{STREAM_SSID_URL}}',
+            streamURL: '{{STREAM_URL}}'
+        },
+        lang: '{{lang|lower}}',
+    {% if user_data %}
+    user:{
+        id: '{{ user_data.uid }}',
+                'cpoints-progress': {
+            current: {{ user_data.cpointsProgress.current }},
+            max: {{ user_data.cpointsProgress.max }}
+        },
+        'sublevel-progress': {
+            current: {{ user_data.sublevelProgress.current }},
+            max: {{ user_data.sublevelProgress.max }}
+        },
+        'level-progress': {
+            current: {{ user_data.levelProgress.current }},
+            max: {{ user_data.levelProgress.max }}
+        },
+        confirmed: {% if user_data.confirmed %} true {% else %} false {% endif %},
+        name: '{{ user_data.name }}',
+                'fake-nick': '{{ user_data.fakeNick }}',
+                level: {
+            number: {{ user_data.level.number }},
+            title: '{{ user_data.level.title }}',
+                    index: {{ user_data.level.index }}
+        },
+        sublevel: {{ user_data.sublevel }},
+        gender: {{ user_data.gender }},
+        phone: '{{ user_data.phone }}',
+                currency: {% if user_data.currency %} '{{ user_data.currency }}' {% else %} null {% endif %},
+        cpoints: {{ user_data.cpoints }},
+        birthday: {% if user_data.birthday %} '{{ user_data.birthday.strftime("%Y-%m-%d %H:%M:%S") }}' {% else %} null {% endif %},
+        avatar: {% if user_data.avatar %} '{{ user_data.avatar }}' {% else %} null {% endif %},
+        skype: '{{ user_data.skype }}',
+                balance: {{ user_data.balance }},
+        email: '{{ user_data.email }}',
+                'registration-date': {% if user_data.registrationDate and user_data.registrationDate.strftime is callable %}'{{ user_data.registrationDate.strftime("%Y-%m-%d %H:%M:%S") }}'{%else%}null{%endif%}
+    }
+    {% else %}
+    user: null
+    {% endif %}
+    }
+</script>
+<!--{% if DEBUG %}-->
+<!--<script src="http://localhost:4000/js/main.js"></script>-->
+<!--{% else %}-->
+<script src="/js/main.js"></script>
+<!--{% endif %}-->
+<script>
+    document.body.addEventListener('touchstart', function(e){
+        if(e.touches.length > 1){
+            e.preventDefault();
+        }
+    });
+</script>
+</body>
+</html>
